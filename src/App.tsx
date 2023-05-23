@@ -7,10 +7,12 @@ import BlogPage from "./pages/BlogPage";
 import BlogDeatailsPage from "./pages/BlogDeatailsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<ListPage />} />

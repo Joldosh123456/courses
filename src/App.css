@@ -1,0 +1,63 @@
+.container{
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+
+a{
+  text-decoration: none;
+}
+
+.link-disabled{
+  pointer-events: none;
+}
+
+
+
+.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+input{
+  padding: 0 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-darkScheme{  
+  background-color: rgba(255, 255, 255, 0.1);
+
+  border: none;
+  border-radius: 10px;
+  outline-color: rgba(255, 255, 255);
+}
+
+.input-darkScheme::placeholder{
+  color: rgba(145, 158, 171, 1);
+}
+
+
+
+
+button{
+  border: none;
+  cursor: pointer;
+}
+button:active{
+  transition: 0s;
+}
+
+
+
+textarea{
+  resize: none;
+}
