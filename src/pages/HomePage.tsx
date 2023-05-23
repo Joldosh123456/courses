@@ -1,10 +1,17 @@
 import { useTranslation } from 'react-i18next'
+import Brands from '../components/Brands/Brands'
+
+
+
+ 
 
 
 function HomePage() {
-    const {t} = useTranslation()
+  const {t} = useTranslation()
   return (
-    <div>HomePage</div>
+    <div>HomePage
+      <Brands/>
+    </div>
   )
 }
 

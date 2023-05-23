@@ -1,0 +1,42 @@
+
+.Brands{
+    padding: 80px 0px 80px 0;
+    .Brands__container{
+
+        h1{
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 64px;
+            text-align: center;
+            color: #212B36;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            text-align: center;
+            color: #637381;
+            margin: 24px 0 70px 0;
+        }
+
+        .Brands__images-container{
+            display: flex;
+            justify-content: space-evenly;
+            grid-gap:  64px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Brands__container{
+        h1{
+            font-size: 32px !important; 
+            line-height: 42px !important;
+        }
+
+        .Brands__images-container{
+            flex-wrap: wrap;
+        }
+    }
+}
