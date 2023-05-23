@@ -1,0 +1,122 @@
+
+.App{
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: rgb(255, 255, 255);
+}
+
+
+
+.App *{
+  color: black;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+
+
+
+a{
+  text-decoration: none;
+}
+
+.link-disabled{
+  pointer-events: none;
+}
+
+
+
+.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+input{
+  padding: 0 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-darkScheme{  
+  background-color: rgba(255, 255, 255, 0.1);
+
+  border: none;
+  border-radius: 10px;
+  outline-color: rgba(255, 255, 255);
+}
+
+.input-darkScheme::placeholder{
+  color: rgba(145, 158, 171, 1);
+}
+
+
+
+
+button{
+  border: none;
+  cursor: pointer;
+}
+button:active{
+  transition: 0s;
+}
+button[disabled]{
+  background-color: rgba(136, 136, 136, 0.2);
+}
+
+
+
+textarea{
+  resize: none;
+}
+
+
+
+
+.container{
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+
+
+
+.App-dark{
+  background: rgba(22, 28, 36, 1)!important;
+}
+
+
+.App-dark *{
+  color: white;
+}
+
+
+.App-dark {
+  input{
+    outline-width: 1px;
+  }
+}
+
+.App-dark{ 
+  input::placeholder{
+    color: rgba(145, 158, 171, 1);
+  }
+}
+
+
+.App-dark{
+  hr{
+    background-color: rgba(255, 255, 255, 0.3);
+  } 
+}

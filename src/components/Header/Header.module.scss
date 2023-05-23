@@ -43,11 +43,15 @@ header{
   margin-left: 10px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   position: relative;
 
   cursor: pointer;
   user-select: none;
+
+  img{
+    margin-top: 5%;
+  }
 }
 
 .header__select:before{
@@ -56,8 +60,8 @@ header{
   height: 8px;
 
   position: absolute;
-  top: 25%;
-  left: -25%;
+  top: calc(50% - 4px);
+  left: -16px;
 
   background: rgba(250, 84, 28, 1);
 
@@ -68,7 +72,7 @@ header{
 
 
 .header__select-modal{
-  top: 150%;
+  top: 110%;
   left: 60%;
 }
 
@@ -76,6 +80,8 @@ header{
 .header__select-modal a, .header__select-modal button{
   width: 100%;
   border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 
 
@@ -94,7 +100,7 @@ header{
 
 
 .header__container-personals{
-  gap: 5px;
+  gap: 10px;
   position: relative;
 }
 
@@ -104,47 +110,65 @@ header{
 }
 
 
-.header__container-personals button:nth-of-type(1){
-  padding: 10px;
-}
-
-
-
-.header__container-personals button:nth-of-type(2){
-  padding: 12px;
-}
-
-
 
 
 .search-wrapper{
+  height: 100%;
+
   position: relative;
+
+  .search-button{
+    height: 100%;
+
+    padding: 0px 10px;
+  }
 }
 
 
 
-.header__search-modal{
-  width: 0px;
-  height: 80%;
 
-  opacity: 0;
-  display: flex;
-  align-items: center;
+.header__search-modal-wrapper{
+  width: fit-content;
+  height: 100%;
+  
   position: absolute;
   right: 0;
-  top: 10%;
-  
-  border: 1px solid black;
-  border-radius: 5px;
+  top: 0;
   overflow: hidden;
+  
+  pointer-events: none;
+
+  border-right: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+
+  .header__search-modal{
+    width: fit-content;
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+
+    pointer-events: all;
+
+    transition: 0.08s;
+    transform: translate(105%);
+  }
 }
+
+
+.header__search-modal-wrapper_active{
+  border-color:rgba(0, 0, 0, 1);
+}
+
 
 
 
 .search-active{
-  width: 190px;
-
-  opacity: 1;
+  transform: translate(0.5px)!important;
 }
 
 
@@ -169,10 +193,8 @@ header{
 
 .header__search-submit{
   height: 100%;
-  max-width: 40px;
-  min-width: 40px;
-  
-  padding: 5px;
+    
+  padding: 0px 10px!important;
 
   display: flex;
   align-items: center;
@@ -183,6 +205,11 @@ header{
   border-radius: 0!important;
 
   cursor: pointer;
+
+
+  img{
+    min-width: 24px;
+  }
 }
 
 .header__search-submit:hover{
@@ -203,8 +230,16 @@ hr{
 
 
 .lang-wrapper{
+  height: 100%;
   position: relative;
+
+  .lang-button{
+    height: 100%;
+
+    padding: 0px 10px;
+  }
 }
+
 
 
 
@@ -215,7 +250,7 @@ hr{
 
   background: rgb(255, 255, 255);
   border-radius: 5px;
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0.5px 0.5px 1px 0.8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
   transition: 0.1s;
@@ -228,6 +263,13 @@ hr{
 .header__language-modal{
   top: 110%;
   left: 0%;
+}
+
+
+.header__language-modal{
+  *{
+    text-transform: uppercase!important;
+  }
 }
 
 
@@ -496,6 +538,12 @@ hr{
 
 
 
+.App-dark{
+  hr{
+    background-color: rgba(255, 255, 255, 0.3);
+  } 
+}
+
 
 .header-dark.is-pinned{
   background-color: rgba(22, 28, 36, 1)!important;
@@ -585,7 +633,7 @@ hr{
 
 .header-dark .header__language-modal, .header-dark .header__select-modal{
   background: rgba(22, 28, 36, 1);
-  box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px -2px rgba(255, 255, 255, 0.1);
 }
 
 .header-dark .header__language-modal button{

@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { styled } from "@mui/material/styles";
+import { createTheme, styled } from "@mui/material/styles";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Link, useLocation } from "react-router-dom";
@@ -27,14 +27,15 @@ import burgerMenuIconDark from "../../assets/Header/burgerMenuIcon-darkMode.svg"
 import crossIconLight from "../../assets/Header/crossIcon-lightMode.svg";
 import crossIconDark from "../../assets/Header/crossIcon-darkMode.svg";
 import { changeLang, changeScheme } from "../../redux";
-import { useAppSelector, useOutsideClick } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector, useOutsideClick } from "../../hooks/hooks";
 import Button from "@mui/material/Button";
-import { navLinks } from "../../constants/Header";
+import { navSelectLinks, langSelectButtons } from "../../constants/Header";
 
 const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
   width: 62,
   height: 34,
   padding: 7,
+  margin: '0!important',
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,
@@ -84,9 +85,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
   },
 }));
 
+
+
 function Header() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { t, i18n } = useTranslation();
 
@@ -196,66 +199,53 @@ function Header() {
 
   const logoFunc = () => {
     if (darkScheme) {
-      if (location.pathname === "/services") {
-        if (isPinned) {
-          return mainLogoDark;
-        }
-        return mainLogoDark;
-      }
       return mainLogoDark;
     } else {
-      if (location.pathname === "/services") {
-        if (isPinned) {
-          return mainLogoLight;
-        }
-        return mainLogoDark;
-      }
       return mainLogoLight;
     }
   };
 
-  const label = { inputProps: { "aria-label": "Switch demo" } };
 
   const darkModeFunc = () => {
     if (darkScheme) {
-      if (location.pathname === "/services") {
-        if (isPinned) {
-          return "header-dark";
-        }
-        return "header-dark";
-      }
       return "header-dark";
     } else {
-      if (location.pathname === "/services") {
-        if (isPinned) {
-          return " ";
-        }
-        return "header-dark";
-      }
       return " ";
     }
   };
 
-  const renderLinks = useMemo(
-    () =>
-      navLinks.map((elem) => (
-        <Link
-          to={elem.to}
-          className={location.pathname === elem.to ? "link-disabled" : ""}
-          onClick={() => setSelectModal(false)}
-        >
-          <Button variant="contained">{t(elem.text)}</Button>
-        </Link>
-      )),
-    [navLinks]
-  );
+  
+  const renderNavSelectLinks = navSelectLinks.map((elem, index) => (
+    <Link
+      key={Date.now() + index}
+      to={elem.to}
+      className={location.pathname === elem.to ? "link-disabled" : ""}
+      onClick={() => setSelectModal(false)}
+    >
+      <Button disabled={location.pathname === elem.to}>{t(elem.text)}</Button>
+    </Link>
+  ));
+
+  const renderLangSelectButtons = langSelectButtons.map((elem, index) => (
+    <Button 
+      key={Date.now() + index}
+      onClick={() => {
+        changeLanguage(elem.lang)
+        closeModal(setLangModal)
+      }} 
+      disabled={elem.lang === lang}
+    >
+      {elem.lang}
+    </Button>
+  ))
+
 
   return (
     <header
       ref={header}
       className={`${css[darkModeFunc()]} ${isPinned ? css.isPinned : ""} flex`}
     >
-      <div className={`container ${css.header__container} flex`}>
+      <div className={`container ${css['header__container']} flex justify-between`}>
         <nav className={css["header__container-links"]}>
           <Link to="/">
             <img
@@ -285,7 +275,7 @@ function Header() {
               isSelectModal ? css["active"] : ""
             }`}
           >
-            {renderLinks}
+            {renderNavSelectLinks}
           </div>
         </nav>
 
@@ -303,37 +293,41 @@ function Header() {
           />
 
           <div className={css["search-wrapper"]}>
-            {/* <Button
-              className={`search-button ${isSearchModal ? 'hide' : ''}`} 
-              elem={<img src={searchIconLight} alt='search icon' />} 
-              onClick={() => setSearchModal((v) => !v)} 
-            /> */}
-
-            <form
-              ref={searchModalRef}
-              className={`${css["header__search-modal"]} ${
-                isSearchModal ? css["search-active"] : ""
-              }`}
-              onSubmit={handleSubmit}
+            <Button
+              className={`${css['search-button']} ${isSearchModal ? 'hide' : ''}`} 
+              onClick={() => setSearchModal((v) => !v)}
             >
-              <input
-                type="text"
-                className={css["header__search-input"]}
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-              <button className={css["header__search-submit"]}>
-                <img src={searchIconLight} alt="search-icon" />
-              </button>
-            </form>
+              <img src={searchIconLight} alt='search-icon.svg' />
+            </Button>
+
+            <div className={`${css["header__search-modal-wrapper"]} ${isSearchModal ? css['header__search-modal-wrapper_active'] : ''}`}>
+              <form
+                ref={searchModalRef}
+                className={`${css["header__search-modal"]} ${
+                  isSearchModal ? css["search-active"] : ""
+                }`}
+                onSubmit={handleSubmit}
+              >
+                <input
+                  type="text"
+                  className={css["header__search-input"]}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+                <button className={css["header__search-submit"]}>
+                  <img src={searchIconLight} alt="search-icon" />
+                </button>
+              </form>
+            </div>
           </div>
 
           <div className={css["lang-wrapper"]}>
-            {/* <Button 
-              className={`lang-button`} 
-              elem={<img src={languageIconLight} alt='language icon' />} 
+            <Button 
+              className={css[`lang-button`]} 
               onClick={() => setLangModal(true)}
-            /> */}
+            >
+              <img src={languageIconLight} alt='language icon' />
+            </Button>
 
             <div
               ref={langModalRef}
@@ -341,26 +335,23 @@ function Header() {
                 isLangModal ? css["active"] : ""
               }`}
             >
-              {/* <Button 
-                elem="EN" mod={lang == 'en' ? `disabled` : ''} 
-                onClick={() => {
-                  changeLanguage('en');
-                  closeModal(setLangModal)
-                }} 
-              />
-              <Button 
-                elem="RU" mod={lang == 'ru' ? `disabled` : ''} 
-                onClick={() => {
-                  changeLanguage('ru')
-                  closeModal(setLangModal)
-                }} 
-              /> */}
+              {renderLangSelectButtons}
             </div>
           </div>
 
           <hr />
-          {/* <Button className='login-button' elem={t("header.login")} />
-          <Button className={`join-button`} elem={t("header.join-us")} mod={'black'} /> */}
+          
+          <Button 
+            className='login-button' 
+            size="medium"
+          >{t("header.login")}</Button>
+
+          <Button 
+            className={`join-button`} 
+            variant='contained'
+            size="medium"
+            color="primary"
+          >{t("header.join-us")}</Button>
         </div>
       </div>
 

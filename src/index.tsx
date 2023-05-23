@@ -10,6 +10,16 @@ import "./i18n";
 import { store } from "./redux";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
+import { createTheme, ThemeProvider } from "@mui/material";
+
+
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    dashed: true;
+  }
+}
+
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

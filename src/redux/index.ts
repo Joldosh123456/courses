@@ -2,7 +2,6 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 
 
-// let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const generalSlice = createSlice({
   name: 'general',

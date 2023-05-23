@@ -1,9 +1,9 @@
-interface navLink {
+interface navSelectLink {
   to: string,
   text: string
 }
 
-export const navLinks: navLink[] = [
+export const navSelectLinks: navSelectLink[] = [
   {
     to: '/',
     text: "header.home"
@@ -20,4 +20,19 @@ export const navLinks: navLink[] = [
     to: '/contact',
     text: "header.select.contact"
   },
+]
+
+
+
+interface langSelectButton {
+  lang: string
+}
+
+export const langSelectButtons: langSelectButton[] = [
+  {
+    lang: "en"
+  },
+  {
+    lang: "ru"
+  }
 ]
