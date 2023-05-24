@@ -13,5 +13,13 @@
       "about": "About Us",
       "contact": "Contact"
     }
+  },
+  "footer": {
+    "text": "The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.",
+    "address": "655 Schaefer Dale",
+    "input-placeholder": "Email address",
+    "copyright": "© 2021. All rights reserved",
+    "help-center": "Help Center",
+    "terms-of-service": "Terms of Service"
   }
 }

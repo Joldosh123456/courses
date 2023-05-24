@@ -39,6 +39,7 @@ import {
   navLinks,
 } from "../../constants/Header";
 
+
 const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
   width: 62,
   height: 34,
@@ -92,6 +93,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
     borderRadius: 20 / 2,
   },
 }));
+
 
 function Header() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
@@ -219,9 +221,7 @@ function Header() {
     }
   };
 
-  const renderNavLinks = useMemo(
-    () =>
-      navLinks.map((elem, index) => (
+  const renderNavLinks = navLinks.map((elem, index) => (
         <Link
           key={Date.now() + index}
           to={elem.to}
@@ -233,9 +233,7 @@ function Header() {
         >
           {t(elem.text)}
         </Link>
-      )),
-    [navLinks]
-  );
+  ))
 
   const renderNavSelectLinks = navSelectLinks.map((elem, index) => (
     <Link

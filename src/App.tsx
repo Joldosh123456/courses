@@ -10,6 +10,7 @@ import ContactPage from "./pages/ContactPage";
 import Header from "./components/Header/Header";
 import { useAppSelector } from "./hooks/hooks";
 import { createTheme, ThemeProvider } from "@mui/material";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -50,6 +51,13 @@ function App() {
                 backgroundColor: 'rgba(127, 127, 127, 0.1)!important',
                 color: darkScheme ? 'rgba(255,255,255,0.3)!important' : 'rgba(0, 0, 0, 0.3)'
               }),
+              ...(ownerState.variant === 'contained' &&
+              ownerState.color === 'secondary' && {
+                backgroundColor: 'var(--main-orange)',
+                '&:hover': {
+                  backgroundColor: 'rgba(179, 32, 14, 1)'
+                }
+              })
           }),
         },
       },
@@ -71,6 +79,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+
+        <Footer />
       </div>
     </ThemeProvider>
   );
