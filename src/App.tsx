@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ListPage from "./pages/ListPage";
@@ -7,20 +7,72 @@ import BlogPage from "./pages/BlogPage";
 import BlogDeatailsPage from "./pages/BlogDeatailsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import Header from "./components/Header/Header";
+import { useAppSelector } from "./hooks/hooks";
+import { createTheme, ThemeProvider } from "@mui/material";
+
+
+
 
 function App() {
+  const darkScheme = useAppSelector((state) => state.general.darkScheme);
+
+  const theme = createTheme({
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: ({ ownerState }) => ({
+            whiteSpace: 'nowrap',
+            color: darkScheme ? 'white' : 'black',
+            minWidth: '20px',
+            textTransform: 'none',
+            ...({
+              '&:hover': {
+                backgroundColor: darkScheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+              },
+            }),
+            ...(ownerState.size === 'medium' &&{
+              borderRadius: '8px',
+              ".MuiButtonBase-root": {
+                padding: '6px 16px',
+              },
+              }),
+            ...(ownerState.variant === 'contained' &&
+              ownerState.color === 'primary' && {
+                backgroundColor: darkScheme ? 'white' : 'black',
+                color: darkScheme ? 'black' : 'white',
+                '&:hover': {
+                  backgroundColor: darkScheme ? '#a2aab3' : 'rgba(69, 79, 91, 1)',
+                  boxShadow: 'none'
+                },
+              }),
+              ...(ownerState.disabled &&{
+                backgroundColor: 'rgba(127, 127, 127, 0.1)!important',
+                color: darkScheme ? 'rgba(255,255,255,0.3)!important' : 'rgba(0, 0, 0, 0.3)'
+              }),
+          }),
+        },
+      },
+    },
+  });
+
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/list" element={<ListPage />} />
-        <Route path="/details" element={<DetailsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog-details" element={<BlogDeatailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </>
+    <ThemeProvider theme={theme}>
+      <div className={`App ${darkScheme ? 'App-dark' : ''}`}>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/list" element={<ListPage />} />
+          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog-details" element={<BlogDeatailsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 

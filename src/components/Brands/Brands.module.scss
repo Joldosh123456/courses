@@ -8,7 +8,6 @@
             font-size: 48px;
             line-height: 64px;
             text-align: center;
-            color: #212B36;
         }
 
         p{
@@ -23,18 +22,19 @@
         .Brands__images-container{
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
             grid-gap:  64px;
         }
     }
 }
 
 
-.App-dark{
-    h1{
-        color: #FFFFFF;
-    }
+.Brands-dark{
     .Brands__images-container{
-        filter: contrast(0) brightness(200%);
+        img{
+            filter: contrast(0) brightness(200%);
+        }
+        
     }
 }
 
@@ -44,10 +44,6 @@
         h1{
             font-size: 32px !important; 
             line-height: 42px !important;
-        }
-
-        .Brands__images-container{
-            flex-wrap: wrap;
         }
     }
 }
