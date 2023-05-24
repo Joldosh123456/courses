@@ -1,5 +1,17 @@
 {
-    "test": {
-        "test1": "Привет Мир"
+  "header": {
+    "home": "Главная",
+    "components": "Компоненты",
+    "pages": "Страницы",
+    "documentation": "Документация",
+    "login": "Войти",
+    "join-us": "Присоединиться",
+    "select": {
+      "services": "Услуги",
+      "case-studies": "Тем. исследования",
+      "blog": "Блог",
+      "about": "О нас",
+      "contact": "Связаться"
     }
+  }
 }

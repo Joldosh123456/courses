@@ -1,5 +1,17 @@
 {
-    "test": {
-        "test1": "Hello world"
+  "header": {
+    "home": "Home",
+    "components": "Components",
+    "pages": "Pages",
+    "documentation": "Documentation",
+    "login": "Login",
+    "join-us": "Join Us",
+    "select": {
+      "services": "Services",
+      "case-studies": "Case Studies",
+      "blog": "Blog",
+      "about": "About Us",
+      "contact": "Contact"
     }
+  }
 }
