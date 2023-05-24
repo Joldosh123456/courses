@@ -37,6 +37,10 @@ export const navSelectLinks: navSelectLink[] = [
     text: "header.home"
   },
   {
+    to: '/list',
+    text: "header.select.list"
+  },
+  {
     to: '/blog',
     text: "header.select.blog"
   },

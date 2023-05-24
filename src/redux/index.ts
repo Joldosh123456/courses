@@ -6,8 +6,8 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const generalSlice = createSlice({
   name: 'general',
   initialState: {
-    darkScheme: JSON.parse(localStorage.getItem('darkScheme') || ''),
-    lang: JSON.parse(localStorage.getItem('lang') || 'en'),
+    darkScheme: localStorage.getItem('darkScheme') ? JSON.parse(localStorage.getItem('darkScheme') || '') : false,
+    lang: localStorage.getItem('lang') ? JSON.parse(localStorage.getItem('lang') ||  'en') : 'en',
   },
   reducers: {
     changeScheme: (state, action) => {
