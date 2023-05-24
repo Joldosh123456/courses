@@ -86,7 +86,8 @@ header{
 
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_arrow-right.svg/768px-Antu_arrow-right.svg.png?20211122152014');
     background-size: cover;
-    filter: contrast(0) brightness(170%);
+    background-position: center;
+    filter: contrast(0) brightness(20%);
 
     transform: rotate(90deg);
   }
@@ -503,12 +504,30 @@ hr{
   align-items: center;
   justify-content: center;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
 }
 
-.mobile-header__links > a{
-  width: 100%;
+.mobile-header__links{
+  .header__nav-select{
+    &::before{
+      display: none;
+    }
+
+    &::after{
+      width: 18px;
+      height: 18px;
+
+      top: auto;
+      right: 10%;
+    }
+  }
+
+  a{
+    width: 100%;
+  }
+}
+
+.mobile-header__links > a:nth-of-type(1), .mobile-header__links > a:nth-of-type(2){
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -519,8 +538,12 @@ hr{
 
 
 
-.mobile-header__links > button:last-of-type{
+.mobile-header__links button:last-of-type{
   border: none;
+}
+
+.mobile-header__links a:last-of-type{
+  order: 1;
 }
 
 
@@ -533,6 +556,7 @@ hr{
   display: flex;
   flex-direction: column;
   align-items: center;
+  order: 0;
 
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -585,6 +609,18 @@ hr{
   } 
 }
 
+
+.header-dark{
+  .mobile-header__links > a:nth-of-type(1), .mobile-header__links > a:nth-of-type(2){
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .header__nav-select{
+    &::after{
+      filter: contrast(0) brightness(200%);
+    }
+  }
+}
 
 .header-dark.is-pinned{
   background-color: rgba(22, 28, 36, 1)!important;

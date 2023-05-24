@@ -7,7 +7,7 @@ const generalSlice = createSlice({
   name: 'general',
   initialState: {
     darkScheme: localStorage.getItem('darkScheme') ? JSON.parse(localStorage.getItem('darkScheme') || '') : false,
-    lang: localStorage.getItem('lang') ? JSON.parse(localStorage.getItem('lang') || 'en') : 'en',
+    lang: localStorage.getItem('lang') ? JSON.parse(localStorage.getItem('lang') ||  'en') : 'en',
   },
   reducers: {
     changeScheme: (state, action) => {
