@@ -504,7 +504,6 @@ hr{
   align-items: center;
   justify-content: center;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0;
 }
 
@@ -529,7 +528,7 @@ hr{
 }
 
 .mobile-header__links > a:nth-of-type(1), .mobile-header__links > a:nth-of-type(2){
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 
@@ -612,6 +611,10 @@ hr{
 
 
 .header-dark{
+  .mobile-header__links > a:nth-of-type(1), .mobile-header__links > a:nth-of-type(2){
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
   .header__nav-select{
     &::after{
       filter: contrast(0) brightness(200%);
