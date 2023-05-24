@@ -27,15 +27,19 @@ import burgerMenuIconDark from "../../assets/Header/burgerMenuIcon-darkMode.svg"
 import crossIconLight from "../../assets/Header/crossIcon-lightMode.svg";
 import crossIconDark from "../../assets/Header/crossIcon-darkMode.svg";
 import { changeLang, changeScheme } from "../../redux";
-import { useAppDispatch, useAppSelector, useOutsideClick } from "../../hooks/hooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useOutsideClick,
+} from "../../hooks/hooks";
 import Button from "@mui/material/Button";
-import { navSelectLinks, langSelectButtons } from "../../constants/Header";
+import { navSelectLinks, langSelectButtons, navLinks } from "../../constants/Header";
 
 const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
   width: 62,
   height: 34,
   padding: 7,
-  margin: '0!important',
+  margin: "0!important",
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,
@@ -84,8 +88,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
     borderRadius: 20 / 2,
   },
 }));
-
-
 
 function Header() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
@@ -205,7 +207,6 @@ function Header() {
     }
   };
 
-
   const darkModeFunc = () => {
     if (darkScheme) {
       return "header-dark";
@@ -214,7 +215,21 @@ function Header() {
     }
   };
 
-  
+
+  const renderNavLinks = navLinks.map((elem, index) => (
+    <Link
+      key={Date.now() + index}
+      to={elem.to}
+      className={`
+        ${css['header__nav-link']} 
+        ${elem.onClick ? `${css['header__nav-select']} ${isSelectModal ? css['header__nav-select_active'] : ''}` : ''}
+      `}
+      onClick={elem.onClick ? () => setSelectModal((v) => !v) : undefined}
+    >
+      {t(elem.text)}
+    </Link>
+  ));
+
   const renderNavSelectLinks = navSelectLinks.map((elem, index) => (
     <Link
       key={Date.now() + index}
@@ -227,25 +242,40 @@ function Header() {
   ));
 
   const renderLangSelectButtons = langSelectButtons.map((elem, index) => (
-    <Button 
+    <Button
       key={Date.now() + index}
       onClick={() => {
-        changeLanguage(elem.lang)
-        closeModal(setLangModal)
-      }} 
+        changeLanguage(elem.lang);
+        closeModal(setLangModal);
+      }}
       disabled={elem.lang === lang}
     >
       {elem.lang}
     </Button>
-  ))
+  ));
 
+  const renderMobileNavLinks = navLinks.map((elem, index) => (
+    <Link
+      key={Date.now() + index}
+      to={elem.to}
+      className={`
+        ${css['header__nav-link']} 
+        ${elem.onClick ? `${css['header__nav-select']} ${isSelectModal ? css['header__nav-select_active'] : ''}` : ''}
+      `}
+      onClick={elem.onClick ? () => setSelectModal((v) => !v) : undefined}
+    >
+      {t(elem.text)}
+    </Link>
+  ));
 
   return (
     <header
       ref={header}
       className={`${css[darkModeFunc()]} ${isPinned ? css.isPinned : ""} flex`}
     >
-      <div className={`container ${css['header__container']} flex justify-between`}>
+      <div
+        className={`container ${css["header__container"]} flex justify-between`}
+      >
         <nav className={css["header__container-links"]}>
           <Link to="/">
             <img
@@ -254,20 +284,7 @@ function Header() {
               alt="main-logo.svg"
             />
           </Link>
-          <Link to="/">{t("header.home")}</Link>
-          <a href="#">{t("header.components")}</a>
-          <p
-            className={css["header__select"]}
-            onClick={() => setSelectModal((v) => !v)}
-          >
-            {t("header.pages")}
-            <img
-              src={bottomArrowLight}
-              alt="bottom arrow"
-              className={`${isSelectModal ? css["rotate180deg"] : ""}`}
-            />
-          </p>
-          <a href="#">{t("header.documentation")}</a>
+          {renderNavLinks}
 
           <div
             ref={selectModalRef}
@@ -294,13 +311,19 @@ function Header() {
 
           <div className={css["search-wrapper"]}>
             <Button
-              className={`${css['search-button']} ${isSearchModal ? 'hide' : ''}`} 
+              className={`${css["search-button"]} ${
+                isSearchModal ? "hide" : ""
+              }`}
               onClick={() => setSearchModal((v) => !v)}
             >
-              <img src={searchIconLight} alt='search-icon.svg' />
+              <img src={searchIconLight} alt="search-icon.svg" />
             </Button>
 
-            <div className={`${css["header__search-modal-wrapper"]} ${isSearchModal ? css['header__search-modal-wrapper_active'] : ''}`}>
+            <div
+              className={`${css["header__search-modal-wrapper"]} ${
+                isSearchModal ? css["header__search-modal-wrapper_active"] : ""
+              }`}
+            >
               <form
                 ref={searchModalRef}
                 className={`${css["header__search-modal"]} ${
@@ -322,11 +345,11 @@ function Header() {
           </div>
 
           <div className={css["lang-wrapper"]}>
-            <Button 
-              className={css[`lang-button`]} 
+            <Button
+              className={css[`lang-button`]}
               onClick={() => setLangModal(true)}
             >
-              <img src={languageIconLight} alt='language icon' />
+              <img src={languageIconLight} alt="language icon" />
             </Button>
 
             <div
@@ -340,54 +363,66 @@ function Header() {
           </div>
 
           <hr />
-          
-          <Button 
-            className='login-button' 
-            size="medium"
-          >{t("header.login")}</Button>
 
-          <Button 
-            className={`join-button`} 
-            variant='contained'
+          <Button className="login-button" size="medium">
+            {t("header.login")}
+          </Button>
+
+          <Button
+            className={`join-button`}
+            variant="contained"
             size="medium"
             color="primary"
-          >{t("header.join-us")}</Button>
+          >
+            {t("header.join-us")}
+          </Button>
         </div>
       </div>
 
       {/* Mobile */}
-      <div className={`container ${css["header__container_mobile"]}`}>
+      <div className={`container ${css["header__container_mobile"]} justify-between`}>
         <img
           className={css["header__logo"]}
           src={logoFunc()}
           alt="main-logo.svg"
         />
 
-        <div className={css[`header__burger-menu`]}>
-          {/* <Button className={`burger-menu-button_mobile`} elem={<img src={burgerMenuIconLight} alt='burger menu icon' />} onClick={() => toggleModal(isMobileMenuModal, setIsMobileMenuModal)} /> */}
-
-          {/* <Button className={`search-button_mobile ${isMobileSearchModal ? 'hide' : ''}`} elem={<img src={searchIconLight} alt='search icon' />} onClick={() => toggleModal(isMobileSearchModal, setIsMobileSearchModal)} /> */}
-
-          <form
-            ref={mobileSearchModalRef}
-            className={`${css["header__search-modal"]} ${
-              css["header__search-modal-mobile"]
-            } ${isMobileSearchModal ? css["search-modal-mobile_active"] : ""}`}
-            onSubmit={handleSubmit}
+        <div className={`${css[`header__burger-menu`]}`}>
+          <Button
+            className={css[`burger-menu-button_mobile`]}
+            onClick={() => toggleModal(isMobileMenuModal, setIsMobileMenuModal)}
           >
-            <input
-              type="text"
-              className={`${css["header__search-input"]} ${css["header__search-input-mobile"]}`}
-              value={mobileInputValue}
-              onChange={(e) => setMobileInputValue(e.target.value)}
-            />
+            <img src={burgerMenuIconLight} alt="burger menu icon" />
+          </Button>
 
-            <button
-              className={`${css["header__search-submit"]} ${css["header__search-submit-mobile"]}`}
+          <Button className={`${css['search-button_mobile']} ${isMobileSearchModal ? css['hide'] : ''}`} onClick={() => toggleModal(isMobileSearchModal, setIsMobileSearchModal)}>
+            <img src={searchIconLight} alt='search icon' />
+          </Button>
+
+          <div className={`${css['header__search-modal-wrapper']} ${
+                isMobileSearchModal ? css["header__search-modal-wrapper_active"] : ""
+              }`}>
+            <form
+              ref={mobileSearchModalRef}
+              className={`${css["header__search-modal"]} ${
+                css["header__search-modal-mobile"]
+              } ${isMobileSearchModal ? css["search-active"] : ""}`}
+              onSubmit={handleSubmit}
             >
-              <img src={searchIconLight} alt="search-icon" />
-            </button>
-          </form>
+              <input
+                type="text"
+                className={`${css["header__search-input"]} ${css["header__search-input-mobile"]}`}
+                value={mobileInputValue}
+                onChange={(e) => setMobileInputValue(e.target.value)}
+              />
+
+              <button
+                className={`${css["header__search-submit"]} ${css["header__search-submit-mobile"]}`}
+              >
+                <img src={searchIconLight} alt="search-icon" />
+              </button>
+            </form>
+          </div>
         </div>
 
         <div
@@ -399,7 +434,7 @@ function Header() {
           <div
             className={`container ${css["mobile-header__menu-modal-header"]}`}
           >
-            <Link to="/">
+            <Link to="/" onClick={() => setIsMobileMenuModal(false)}>
               <img
                 className={`${css["header__logo"]} ${css["mobile-header__logo"]}`}
                 src={darkScheme ? mainLogoDark : mainLogoLight}
@@ -419,13 +454,13 @@ function Header() {
                 label={undefined}
               />
               <Button
-                className={`lang-button mobile-header__lang-button`}
+                className={`${css['lang-button']} ${css['mobile-header__lang-button']}`}
                 onClick={() => toggleModal(isLangModal, setLangModal)}
               >
                 <img src={languageIconLight} alt="language icon" />
               </Button>
               <Button
-                className={`mobile-header__close-button`}
+                className={css[`mobile-header__close-button`]}
                 onClick={() => setIsMobileMenuModal(false)}
               >
                 <img src={crossIconLight} alt="cross icon" />
@@ -437,20 +472,24 @@ function Header() {
                 css["mobile-header__language-modal"]
               } ${isLangModal ? css["active"] : ""}`}
             >
-              {/* <Button 
-                elem="EN" mod={lang == 'en' ? `disabled` : ''} 
+              <Button 
+                disabled={lang == 'en'} 
                 onClick={() => {
                   changeLanguage('en');
                   closeModal(setLangModal)
                 }} 
-              />
+              >
+                EN
+              </Button>
               <Button 
-                elem="RU" mod={lang == 'ru' ? `disabled` : ''} 
+                disabled={lang == 'ru'} 
                 onClick={() => {
                   changeLanguage('ru')
                   closeModal(setLangModal)
                 }} 
-              /> */}
+              >
+                RU
+              </Button>
             </div>
           </div>
 
@@ -486,30 +525,7 @@ function Header() {
                   : ""
               }`}
             >
-              <Link
-                to="/"
-                className={
-                  "link " + location.pathname === "/" ? "link-disabled" : ""
-                }
-                onClick={() => setIsMobileMenuModal(false)}
-              >
-                <Button>Home</Button>
-              </Link>
-              {/* <Link to='/services' className={location.pathname === '/services' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.services")} mod={location.pathname === '/services' ? 'disabled' : ''} />
-              </Link>
-              <Link to='/case-studies/list' className={location.pathname === '/case-studies/list' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.case-studies")} mod={location.pathname === '/case-studies/list' ? 'disabled' : ''} />
-              </Link>
-              <Link to='/blog/list' className={location.pathname === '/blog/list' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.blog")} mod={location.pathname === '/blog/list' ? 'disabled' : ''} />
-              </Link>
-              <Link to='/about' className={location.pathname === '/about' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.about-us")} mod={location.pathname === '/about' ? 'disabled' : ''} />
-              </Link>
-              <Link to='/contact' className={location.pathname === '/contact' ? 'link-disabled' : ''} onClick={() => setIsMobileMenuModal(false)}>
-                <Button elem={t("header.select.contact")} mod={location.pathname === '/contact' ? 'disabled' : ''} />
-              </Link> */}
+              {renderNavSelectLinks}
             </div>
             <a href="#">
               <Button>dsawd</Button>

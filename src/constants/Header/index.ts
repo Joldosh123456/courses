@@ -1,3 +1,31 @@
+interface navLink {
+  to: string,
+  text: string,
+  onClick?: boolean
+}
+
+export const navLinks: navLink[] = [
+  {
+    to: '/',
+    text: "header.home"
+  },
+  {
+    to: '#',
+    text: "header.components"
+  },
+  {
+    to: '#',
+    text: "header.pages",
+    onClick: true
+  },
+  {
+    to: '#',
+    text: "header.documentation"
+  },
+]
+
+
+
 interface navSelectLink {
   to: string,
   text: string

@@ -24,7 +24,7 @@ header{
 
 
 .header__container-links{
-  gap: 40px;
+  gap: 50px;
   position: relative;
 }
 
@@ -37,43 +37,87 @@ header{
   color: rgba(0, 0, 0);
 }
 
+.header__nav-link{
+  position: relative;
+
+  &::before{
+    content: '';
+    width: 8px;
+    height: 8px;
+  
+    position: absolute;
+    top: calc(50% - 4px);
+    left: -16px;
+  
+    background: rgba(250, 84, 28, 0);
+  
+    border-radius: 10px;
+
+    transition: 0.2s;
+  }
+
+  &:hover{
+
+    &::before{
+      background: rgba(250, 84, 28, 1);
+    }
+  }
+}
 
 
-.header__select{
-  margin-left: 10px;
+
+
+.header__nav-select{
   display: flex;
   align-items: center;
   gap: 8px;
-  position: relative;
 
   cursor: pointer;
   user-select: none;
 
-  img{
-    margin-top: 5%;
+  &::after{
+    content: '';
+    width: 8px;
+    height: 8px;
+
+    position: absolute;
+    top: calc(50% - 3px);
+    right: -13px;
+
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_arrow-right.svg/768px-Antu_arrow-right.svg.png?20211122152014');
+    background-size: cover;
+    filter: contrast(0) brightness(170%);
+
+    transform: rotate(90deg);
   }
 }
 
-.header__select:before{
-  content: '';
-  width: 8px;
-  height: 8px;
-
-  position: absolute;
-  top: calc(50% - 4px);
-  left: -16px;
-
-  background: rgba(250, 84, 28, 1);
-
-  border-radius: 10px;
+.header__nav-select_active{
+  &::after{
+    transform: rotate(270deg);
+  }
 }
+
+// .header__nav-select:before{
+//   content: '';
+//   width: 8px;
+//   height: 8px;
+
+//   position: absolute;
+//   top: calc(50% - 4px);
+//   left: -16px;
+
+//   background: rgba(250, 84, 28, 1);
+
+//   border-radius: 10px;
+// }
 
 
 
 
 .header__select-modal{
   top: 110%;
-  left: 60%;
+  left: 62%;
 }
 
 
@@ -314,6 +358,8 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 10px;
 }
 
 
@@ -325,15 +371,9 @@ hr{
 
 
 .header__search-modal-mobile{
-  width: 0;
   max-width: 220px;
 
   right: 0;
-}
-
-
-.header__search-modal-mobile input{
-  width: 100%;
 }
 
 
@@ -407,7 +447,7 @@ hr{
 
 
 .mobile-header__menu-modal-header > div > button{
-  padding-top: 10px;
+  padding: 10px;
 }
 
 
@@ -429,13 +469,14 @@ hr{
 
 
 .mobile-header__language-modal{
-  /* width: fit-content; */
+  width: fit-content;
   background: white!important;
 
   gap: 0px!important;
 
   top: 90%;
-  left: 65%;
+  right: 14%;
+  left: auto;
   z-index: 110;
 
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2)!important;
