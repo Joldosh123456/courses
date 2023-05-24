@@ -50,8 +50,8 @@ function Brands() {
   return (
     <article className={css['Brands']}>
         <div className={`container ${css['Brands__container']}`}>
-            <h1>We Work With</h1>
-            <p>Quisque aliquet, libero consequat elementum convallis.</p>
+            <h1>{t('Work')}</h1>
+            <p>{t('Desk')}</p>
             <div className={css['Brands__images-container']}>
                 {
                     BrandsData.map(elem => (

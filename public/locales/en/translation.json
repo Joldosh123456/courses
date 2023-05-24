@@ -1,5 +1,6 @@
 {
-    "test": {
-        "test1": "Hello world"
+    "Brands": {
+        "Work": "We Work With",
+        "Desk": "Quisque aliquet, libero consequat elementum convallis."
     }
 }

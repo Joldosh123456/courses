@@ -28,6 +28,17 @@
     }
 }
 
+
+.App-dark{
+    h1{
+        color: #FFFFFF;
+    }
+    .Brands__images-container{
+        filter: contrast(0) brightness(200%);
+    }
+}
+
+
 @media screen and (max-width: 576px) {
     .Brands__container{
         h1{
