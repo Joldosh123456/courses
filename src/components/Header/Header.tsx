@@ -391,7 +391,7 @@ function Header() {
             className={`join-button`}
             variant="contained"
             size="medium"
-            color="primary"
+            color="secondary"
           >
             {t("header.join-us")}
           </Button>
