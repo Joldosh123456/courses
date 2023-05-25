@@ -39,6 +39,12 @@
       "students": "students"
     }
   },
+  "Forget": {
+    "title": "Register Now Forget 20% Discount Every Courses",
+    "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed magna purus, fermentum eu",
+    "placeholder": "Enter your email",
+    "submit": "Register"
+  },
   "footer": {
     "text": "The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.",
     "address": "655 Schaefer Dale",
