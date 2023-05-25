@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../hooks/hooks'
 
@@ -14,8 +14,11 @@ function Forget() {
   const {t} = useTranslation()
 
 
+  const [inputValue, setInputValue] = useState('')
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    setInputValue('')
   } 
 
 
@@ -28,7 +31,7 @@ function Forget() {
 
           <form className='rounded-lg' onSubmit={e => handleSubmit(e)}>
             <label className='rounded-lg'>
-              <input type="email" placeholder={t('Forget.placeholder') || ""} required />
+              <input type="email" placeholder={t('Forget.placeholder') || ""} value={inputValue} onChange={e => setInputValue(e.target.value)} required />
               <Button type='submit' variant='contained' color='primary'>{t('Forget.submit')}</Button>
             </label>
           </form>
