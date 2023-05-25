@@ -27,6 +27,7 @@ function App() {
             color: darkScheme ? 'white' : 'black',
             minWidth: '20px',
             textTransform: 'none',
+            boxShadow: 'none!important',
             ...({
               '&:hover': {
                 backgroundColor: darkScheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
