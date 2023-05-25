@@ -18,6 +18,7 @@ code {
     monospace;
 } */
 
+
 :root{
   --main-orange: rgba(250, 84, 28, 1);
   --main-orange-rgb: 250, 84, 28;
@@ -26,6 +27,7 @@ code {
   --p-color-dark: rgba(145, 158, 171, 1);
   --p-color-dark-rgb: 145, 158, 171;
 }
+
 
 *{
   margin: 0;

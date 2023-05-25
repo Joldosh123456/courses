@@ -95,6 +95,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }: any) => ({
   },
 }));
 
+
 function Header() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
   const dispatch = useAppDispatch();
