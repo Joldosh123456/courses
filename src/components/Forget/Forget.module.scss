@@ -1,0 +1,116 @@
+.Forget{
+  padding: 120px 0;
+
+
+  .Forget__container{
+    padding: 80px;
+
+    background: rgba(var(--main-orange-rgb), 0.08);
+
+
+    .Forget__title{
+
+      h1{
+        font-size: 36px;
+      }
+
+
+      p{
+        margin: 20px 0 40px 0;
+      }
+
+
+      form{
+        min-height: 56px;
+        height: 56px;
+
+        background-color: white;
+
+
+        label{
+          width: 100%;
+          height: 100%;
+
+          padding-right: 4px;
+
+          display: grid;
+          grid-template-columns: 1fr fit-content(100%);
+          align-items: center;
+   
+          &:focus-within {
+            outline-width: 1px;
+            outline-style: solid;
+          }
+
+
+          input{
+            width: 100%;
+            height: 100%;
+  
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+
+            outline: none;
+
+            font-size: 14px;
+          }
+  
+  
+          button{
+            height: 46px;
+
+            padding: 6px 16px;
+          }
+        }
+      }
+    }
+
+
+    .Forget__image{
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 576px){
+  .Forget{
+    padding: 0;
+
+
+    .Forget__container{
+      width: 100%;
+
+      padding: 80px 20px;
+
+
+      .Forget__title{
+        text-align: center;
+
+
+        h1{
+          font-size: 24px;
+        }
+      }
+
+
+      .Forget__image{
+
+        img{
+          width: 90%;
+        }
+      }
+    }
+  }
+}
