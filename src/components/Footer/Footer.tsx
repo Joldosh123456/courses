@@ -119,7 +119,7 @@ function Footer() {
                   onChange={(e) => setEmailInputValue(e.target.value)}
                   required
                 />
-                <Button variant="contained" color="secondary" type="submit">
+                <Button variant="contained" color="primary" type="submit">
                   <img src={arrowIcon} alt="arrow-icon.svg" />
                 </Button>
               </form>

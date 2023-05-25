@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import Brands from '../components/Brands/Brands'
+import Category from '../components/Category/Category'
 import Why from '../components/Why/Why'
 
 
@@ -10,10 +11,11 @@ import Why from '../components/Why/Why'
 function HomePage() {
   const {t} = useTranslation()
   return (
-    <div>HomePage
+    <main>
       <Brands/>
       <Why/>
-    </div>
+      <Category/>
+    </main>
   )
 }
 

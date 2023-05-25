@@ -24,6 +24,21 @@
       "DeskExplain": "Curabitur a felis in nunc fringilla tristique. Fusce egestas elit eget lorem. Etiam vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
       "Explain": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis"
   },
+  "Category": {
+    "title": "Featured Category",
+    "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+    "button": "Explore more",
+    "cards": {
+      "python": "Python",
+      "photoshop": "Photoshop",
+      "management": "Management",
+      "web-development": "Web Development",
+      "machine-learning": "Machine Learning",
+      "cyber-security": "Cyber Security",
+      "marketing": "Marketing",
+      "students": "students"
+    }
+  },
   "footer": {
     "text": "The starting point for your next project based on easy-to-customize Material-UI © helps you build apps faster and better.",
     "address": "655 Schaefer Dale",

@@ -13,9 +13,15 @@
 
 .App *{
   color: #212B36;
-  font-size: 14px;
   transition: 0.2s;
+
+  
+  p{
+    font-size: 14px;
+    color: var(--p-color);
+  }
 }
+
 
 
 
@@ -94,6 +100,11 @@ textarea{
 
 .App-dark{
   background: rgba(22, 28, 36, 1)!important;
+
+
+  p{
+    color: var(--p-color-dark);
+  }
 }
 
 
