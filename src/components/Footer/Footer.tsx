@@ -92,7 +92,7 @@ function Footer() {
   );
 
   return (
-    <footer className={darkScheme ? css["footer-dark"] : ""}>
+    <footer className={`${css['footer']} ${darkScheme ? css["footer-dark"] : ""}`}>
       <article className={css["footer__main"]}>
         <div className={`container ${css['footer__main-container']}`}>
           <div className={css["footer__main-content"]}>
