@@ -39,6 +39,17 @@
       "students": "students"
     }
   },
+  "Teachers": {
+    "title": "Meet Our Teachers",
+    "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+    "cards": {
+      "ui-designer": "UI Designer",
+      "hr-manager": "Hr Manager",
+      "leader": "Leader",
+      "project-manager": "Project Manager"
+    },
+    "button": "View All Teachers"
+  },
   "Forget": {
     "title": "Register Now Forget 20% Discount Every Courses",
     "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed magna purus, fermentum eu",
