@@ -1,0 +1,220 @@
+.main {
+  padding: 120px 0;
+  display: flex;
+  gap: 120px;
+  .rightMain {
+    .textMain {
+      width: 392px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 80px;
+      margin-bottom: 24px;
+      .online {
+        color: #637381;
+        margin-left: 10px;
+      }
+      .courses {
+        color: #fa541c;
+        margin-right: 10px;
+        border-bottom: 3px solid #fa541c;
+      }
+    }
+    .desciption {
+      width: 466px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 53px;
+    }
+    .menuBtns {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        margin-left: 15px;
+        padding: 10px 0px;
+        cursor: pointer;
+      }
+      .btnVideo {
+        display: flex;
+        align-items: center;
+        img {
+          margin-top: 15px;
+        }
+      }
+    }
+    .dashed {
+      width: 466px;
+      border: 1px dashed rgba(145, 158, 171, 0.24);
+      margin-bottom: 48px;
+      margin-top: 30px;
+    }
+    .dataMain {
+      display: flex;
+      gap: 60px;
+      .data {
+        img {
+          margin-bottom: 30px;
+        }
+        h1 {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 54px;
+          margin-top: -60px;
+          margin-left: 5px;
+        }
+        p {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 994px) {
+  .main {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 866px) {
+  .main {
+    gap: 0px;
+    justify-content: space-between;
+    .rightMain {
+      .textMain {
+        font-size: 52px;
+        line-height: 74px;
+      }
+      .desciption {
+        width: 318px;
+      }
+      .menuBtns {
+        gap: 10px;
+      }
+      .dashed {
+        width: 370px;
+      }
+      .dataMain {
+        gap: 32px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 736px) {
+  .main {
+    .rightMain {
+      .textMain {
+        font-size: 43px;
+        line-height: 63px;
+      }
+      .desciption {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .menuBtns {
+        gap: 0px;
+      }
+      .dashed {
+        width: 330px;
+      }
+      .dataMain {
+        .data {
+          h1 {
+            font-size: 30px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .main {
+    .rightMain {
+      .textMain {
+        text-align: center;
+      }
+      .desciption {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      .menuBtns {
+        flex-direction: column;
+        .btnVideo {
+          margin-right: 20px;
+        }
+      }
+      .dashed {
+        width: 380px;
+      }
+      .dataMain {
+        gap: 63px;
+      }
+    }
+    .leftMain {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .main {
+    .rightMain {
+      .dashed {
+        width: 100%;
+      }
+      .dataMain {
+        gap: 43px;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .main {
+    .rightMain {
+      .textMain {
+        width: 300px;
+        font-size: 32px;
+      }
+      .dataMain {
+        gap: 15px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .main {
+    .rightMain {
+      .textMain {
+        line-height: 46px;
+        width: 280px;
+        font-size: 28px;
+      }
+      .desciption {
+        width: 260px;
+      }
+      .dataMain {
+        gap: 15px;
+        justify-content: center;
+
+        .data {
+          h1 {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
