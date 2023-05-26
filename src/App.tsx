@@ -65,7 +65,16 @@ function App() {
                 '&:hover': {
                   backgroundColor: 'rgba(179, 32, 14, 1)'
                 }
-              })
+              }),
+              ...(ownerState.variant === 'outlined' &&
+              ownerState.color === 'secondary' && {
+                color: darkScheme ? 'white' : 'black',
+                borderColor: darkScheme ? 'rgba(255, 255, 255, 0.5)' : "rgba(0, 0, 0, 0.5)",
+                '&:hover': {
+                  borderColor: darkScheme ? 'rgba(255, 255, 255, 0.5)' : "rgba(0, 0, 0, 0.5)",
+                  backgroundColor: darkScheme ? 'rgba(255, 255, 255, 0.1)' : "rgba(0, 0, 0, 0.1)"
+                },
+              }),
           }),
         },
       },

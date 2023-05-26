@@ -45,6 +45,17 @@
     "Scan": "Scan QR code to install on your device",
     "ButtonMui": "Download from"
   },
+  "Teachers": {
+    "title": "Meet Our Teachers",
+    "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+    "cards": {
+      "ui-designer": "UI Designer",
+      "hr-manager": "Hr Manager",
+      "leader": "Leader",
+      "project-manager": "Project Manager"
+    },
+    "button": "View All Teachers"
+  },
   "Forget": {
     "title": "Register Now Forget 20% Discount Every Courses",
     "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed magna purus, fermentum eu",
@@ -58,5 +69,17 @@
     "copyright": "© 2021. All rights reserved",
     "help-center": "Help Center",
     "terms-of-service": "Terms of Service"
+  },
+  "main": {
+    "title": "Free",
+    "title2":"Online",
+    "title3":"Courses",
+    "title4":"From The Experts",
+    "desc": "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. ",
+    "btnText":"Ready Start",
+    "btnText1":"Watch Video",
+    "divider": "Learners",
+    "divider2": "Courses",
+    "divider3":"Graduates"
   }
 }
