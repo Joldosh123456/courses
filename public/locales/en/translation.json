@@ -1,28 +1,28 @@
 {
   "header": {
-      "home": "Home",
-      "components": "Components",
-      "pages": "Pages",
-      "documentation": "Documentation",
-      "login": "Login",
-      "join-us": "Join Us",
-      "select": {
-        "services": "Services",
-        "list": "List",
-        "blog": "Blog",
-        "about": "About Us",
-        "contact": "Contact"
-      }
+    "home": "Home",
+    "components": "Components",
+    "pages": "Pages",
+    "documentation": "Documentation",
+    "login": "Login",
+    "join-us": "Join Us",
+    "select": {
+      "services": "Services",
+      "list": "List",
+      "blog": "Blog",
+      "about": "About Us",
+      "contact": "Contact"
+    }
   },
   "Brands": {
-      "Work": "We Work With",
-      "Desk": "Quisque aliquet, libero consequat elementum convallis."
-  }, 
+    "Work": "We Work With",
+    "Desk": "Quisque aliquet, libero consequat elementum convallis."
+  },
   "Why": {
-      "Title": "Nullam accumsan lorem in dui.",
-      "DeskTitle": "Phasellus gravida semper nisi. Vestibulum rutrum",
-      "DeskExplain": "Curabitur a felis in nunc fringilla tristique. Fusce egestas elit eget lorem. Etiam vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
-      "Explain": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis"
+    "Title": "Nullam accumsan lorem in dui.",
+    "DeskTitle": "Phasellus gravida semper nisi. Vestibulum rutrum",
+    "DeskExplain": "Curabitur a felis in nunc fringilla tristique. Fusce egestas elit eget lorem. Etiam vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
+    "Explain": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis"
   },
   "Category": {
     "title": "Featured Category",
@@ -38,6 +38,12 @@
       "marketing": "Marketing",
       "students": "students"
     }
+  },
+  "DownloadApp": {
+    "App": "Download App",
+    "DeskApp": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.",
+    "Scan": "Scan QR code to install on your device",
+    "ButtonMui": "Download from"
   },
   "Forget": {
     "title": "Register Now Forget 20% Discount Every Courses",
