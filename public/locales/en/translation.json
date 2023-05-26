@@ -39,6 +39,12 @@
       "students": "students"
     }
   },
+  "DownloadApp": {
+    "App": "Download App",
+    "DeskApp": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.",
+    "Scan": "Scan QR code to install on your device",
+    "ButtonMui": "Download from"
+  },
   "Teachers": {
     "title": "Meet Our Teachers",
     "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
