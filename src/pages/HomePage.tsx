@@ -9,9 +9,9 @@ function HomePage() {
   return (
     <main>
       <Main />
-      {/* <Brands />
+      <Brands />
       <Why />
-      <Category /> */}
+      <Category />
     </main>
   );
 }
