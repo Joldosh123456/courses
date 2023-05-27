@@ -64,5 +64,29 @@
     "divider": "Learners",
     "divider2": "Courses",
     "divider3":"Graduates"
+  },
+  "List": {
+    "title": "Courses",
+    "aside": {
+      "search": "Search",
+      "rating": "Z",
+      "up": "& Up",
+      "duration": "Duration",
+      "category": "Category",
+      "level": "Level",
+      "fee": "Fee",
+      "language": "Language",
+      "all": "All",
+      "select": {
+        "management": "Management",
+        "design": "Design",
+        "development": "Development",
+        "beginner": "Beginner",
+        "average": "Average",
+        "advanced": "Advanced",
+        "ru": "Russian",
+        "en": "English"
+      }
+    }
   }
 }

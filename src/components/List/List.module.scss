@@ -1,0 +1,75 @@
+.List__container{
+  min-height: 200vh;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: auto 200vh;
+
+  .List__aside{
+
+
+    h2{
+      color: var(--p-color);
+      margin-bottom: 12px;
+    }
+
+
+    label{
+      min-height: 54px;
+      height: 54px;
+
+      grid-auto-columns: auto;
+
+      background-color: rgb(var(--p-color-dark-rgb), 0.08);
+
+
+      &:focus-within{
+        outline: 1px solid black;
+      }
+
+
+      img{
+        height: 100%;
+        filter: opacity(100%);
+        user-select: none;
+      }
+      
+
+      input{
+        background: none;
+        outline: none;
+      }
+    }
+
+    .List__stars-container{
+      transform: scaleX(-1);
+
+      .List__aside-star{      
+      // &:hover img{
+        //   filter: contrast(0.8)
+        // }
+        
+        &:hover{
+          filter: contrast(0.5)
+        }
+  
+        &:hover ~ img{
+          filter: contrast(0.5)
+        }
+      }
+    }
+
+
+    .List__select-arrow{
+      width: 20px;
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 14px;
+
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+.star-disabled{
+  filter: contrast(0) grayscale(100%) opacity(0.4);
+}
