@@ -78,14 +78,21 @@
       "language": "Language",
       "all": "All",
       "select": {
+        "up": "& up",
+        "hours": "hours",
         "management": "Management",
         "design": "Design",
         "development": "Development",
-        "beginner": "Beginner",
-        "average": "Average",
-        "advanced": "Advanced",
+        "Beginner": "Beginner",
+        "Intermediate": "Intermediate",
+        "Advanced": "Advanced",
         "ru": "Russian",
         "en": "English"
+      },
+      "card": {
+        "bestseller": "best seller",
+        "reviews": "reviews",
+        "students": "students"
       }
     }
   }

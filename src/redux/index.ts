@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { coursesReducer } from "./slices/coursesSlice";
 
 
 
@@ -29,7 +30,8 @@ export type AppDispatch = typeof store.dispatch
 
 export const store = configureStore({
   reducer: {
-    general: generalSlice.reducer
+    general: generalSlice.reducer,
+    courses: coursesReducer
   }
 })
 

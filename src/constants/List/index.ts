@@ -1,6 +1,6 @@
 export interface course {
   id: number,
-  type: string,
+  category: string,
   title: string,
   description: string,
   rating: number,
@@ -14,8 +14,10 @@ export interface course {
   level: string,
   prevPrice: number,
   currPrice: number,
-  bestseller: boolean
+  bestseller: boolean,
+  image: string
 }
+
 
 
 export interface star {
@@ -58,15 +60,16 @@ export const filters: filter[] = [
   {
     title: "level",
     data: [
-      'beginner',
-      'average',
-      'advanced',
+      'Beginner',
+      'Intermediate',
+      'Advanced',
     ],
     selected: ''
   },
   {
     title: "fee",
     data: [
+      10,
       25,
       50,
       100,

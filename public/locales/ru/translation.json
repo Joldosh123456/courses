@@ -79,14 +79,21 @@
       "language": "Язык",
       "all": "Все",
       "select": {
+        "up": "и выше",
+        "hours": "часов",
         "management": "Менеджмент",
         "design": "Дизайн",
         "development": "Разработка",
-        "beginner": "Новичок",
-        "average": "Средний",
-        "advanced": "Продвинутый",
+        "Beginner": "Новичок",
+        "Intermediate": "Средний",
+        "Advanced": "Продвинутый",
         "ru": "Русский",
         "en": "Английский"
+      },
+      "card": {
+        "bestseller": "бестселлер",
+        "reviews": "обзоров",
+        "students": "студентов"
       }
     }
   }
