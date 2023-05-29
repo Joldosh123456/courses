@@ -20,7 +20,7 @@ import ic_skillLevel from "../../assets/List/ic_skill_level.svg";
 import i18n from "../../i18n";
 
 function List() {
-  const darkScheme = useAppSelector(state => state.general.darkScheme)
+  const darkScheme = useAppSelector((state) => state.general.darkScheme);
   const { t } = useTranslation();
 
   const stars: star[] = [
@@ -79,6 +79,7 @@ function List() {
     [starsActive]
   );
 
+  const [searchValue, setSearchValue] = useState("");
   const [duration, setDuration] = useState("");
   const [category, setCategory] = useState("");
   const [level, setLevel] = useState("");
@@ -157,7 +158,7 @@ function List() {
             "& .MuiInputBase-root": {
               height: "54px",
               minHeight: "54px",
-              color: darkScheme ? 'white' : 'rgba(33, 43, 54, 1)'
+              color: darkScheme ? "white" : "rgba(33, 43, 54, 1)",
             },
             "& .MuiOutlinedInput-notchedOutline": {
               background: "rgba(var(--p-color-dark-rgb), 0.08)",
@@ -173,7 +174,7 @@ function List() {
             inputProps={{ "aria-label": "Without label" }}
             variant="outlined"
           >
-            <MenuItem value={""} >{t("List.aside.all")}</MenuItem>
+            <MenuItem value={""}>{t("List.aside.all")}</MenuItem>
             {elem.data.map((elem2, index2) => (
               <MenuItem key={Date.now() + index2} value={elem2}>
                 {elem2 == Number(elem2)
@@ -191,8 +192,6 @@ function List() {
       </div>
     </div>
   ));
-  
-
 
   const dispatch = useAppDispatch();
 
@@ -230,7 +229,7 @@ function List() {
               className={`${css["List__card-right"]} flex flex-col gap-6 p-8`}
             >
               <span className="text-xs font-semibold uppercase">
-                {t('List.aside.select.' + elem.category)}
+                {t("List.aside.select." + elem.category)}
               </span>
               <h1 className="text-lg font-semibold">
                 {elem.id} {elem.title}
@@ -268,9 +267,14 @@ function List() {
                   </svg>
                 </span>
                 <h2>{elem.rating.toFixed(1)}</h2>
-                <p>({elem.reviews} {t('List.aside.card.reviews')})</p>
+                <p>
+                  ({elem.reviews} {t("List.aside.card.reviews")})
+                </p>
                 <hr />
-                <h2><span className="font-semibold">{elem.students}</span> {t('List.aside.card.students')}</h2>
+                <h2>
+                  <span className="font-semibold">{elem.students}</span>{" "}
+                  {t("List.aside.card.students")}
+                </h2>
               </div>
 
               <div
@@ -285,12 +289,12 @@ function List() {
               >
                 <span>
                   <img src={ic_clock} alt="ic_clock.svg" />
-                  {elem.hours + ` ${t('List.aside.select.hours')}`}
+                  {elem.hours + ` ${t("List.aside.select.hours")}`}
                 </span>
 
                 <span>
                   <img src={ic_skillLevel} alt="ic_skill_level.svg" />
-                  {t('List.aside.select.'+elem.level)}
+                  {t("List.aside.select." + elem.level)}
                 </span>
               </div>
 
@@ -301,7 +305,7 @@ function List() {
             </div>
 
             <h3 className={css["bestseller-title"]}>
-              {elem.bestseller ? t('List.aside.card.bestseller') : ""}
+              {elem.bestseller ? t("List.aside.card.bestseller") : ""}
             </h3>
           </section>
         ) : (
@@ -312,7 +316,26 @@ function List() {
   );
 
   useEffect(() => {
-    let arrayCopy = coursesData.filter(
+    let arrayCopy = coursesData.slice(0)
+    let search = searchValue.trim().toLowerCase().split(' ')    
+    
+
+    let newArray = arrayCopy.filter((elem, index) => {
+      let title = elem.title.toLowerCase().split(' ')
+      
+      const firstWordIndex = title.findIndex(elem2 => elem2.substring(0, search[0].length) == search[0])
+
+      if (firstWordIndex > -1) {
+
+        if (title.splice(firstWordIndex, search.length).join(' ').substring(0, search.join(' ').length) == search.join(' ')) {
+          return elem
+        }
+        
+      }
+      return      
+    })
+
+    let finalArray = newArray.filter(
       (elem, index) =>
         elem.rating >=
           starsActive.filter((elem) => elem.active == true).length &&
@@ -323,8 +346,31 @@ function List() {
     );
 
     setPage(1);
-    setCoursesArray(arrayCopy);
-  }, [starsActive, category, level, duration, fee]);
+    setCoursesArray(finalArray);
+  }, [starsActive, category, level, duration, fee, searchValue]);
+
+  // useEffect(() => {
+  //   let arrayCopy = coursesData.slice(0)
+  //   let search = searchValue.trim().toLowerCase().split(' ')    
+    
+
+  //   let newArray = arrayCopy.filter((elem, index) => {
+  //     let title = elem.title.toLowerCase().split(' ')
+      
+  //     const firstWordIndex = title.findIndex(elem2 => elem2.substring(0, search[0].length) == search[0])
+
+  //     if (firstWordIndex > -1) {
+
+  //       if (title.splice(firstWordIndex, search.length).join(' ').substring(0, search.join(' ').length) == search.join(' ')) {
+  //         return elem
+  //       }
+        
+  //     }
+  //     return      
+  //   })
+    
+  //   setCoursesArray(newArray);
+  // }, [searchValue])
 
   // useEffect(() => {
   //   let arrayCopy = coursesData.filter((elem, index) =>
@@ -341,8 +387,10 @@ function List() {
   // }, [level]);
 
   return (
-    <article className={`${darkScheme ? css["List-dark"] : ''} pt-10 pb-28`}>
-      <div className={`container ${css["List__container"]} flex flex-col sm:grid gap-16`}>
+    <article className={`${darkScheme ? css["List-dark"] : ""} pt-10 pb-28`}>
+      <div
+        className={`container ${css["List__container"]} flex flex-col sm:grid gap-16`}
+      >
         <div className={`${css["List__title"]} h-fit col-start-1 col-end-3`}>
           <h1 className="text-3xl sm:text-5xl font-bold">{t("List.title")}</h1>
         </div>
@@ -362,6 +410,8 @@ function List() {
                   className="col-start-2"
                   type="text"
                   placeholder={t("List.aside.search") + "..."}
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
                 />
               </label>
             </div>
@@ -401,7 +451,7 @@ function List() {
             onChange={handlePaginationChange}
             sx={{
               "& .MuiInputBase-root": {
-                border: '5px solid red'
+                border: "5px solid red",
               },
               "& .Mui-selected": {
                 backgroundColor: "rgba(var(--main-orange-rgb), 0.1)!important",
@@ -418,7 +468,7 @@ function List() {
                 width: "40px",
                 height: "40px",
                 borderRadius: "100%",
-                color: darkScheme ? 'white' : 'rgba(33, 43, 54, 1)',
+                color: darkScheme ? "white" : "rgba(33, 43, 54, 1)",
               },
               "& button:hover": {
                 backgroundColor: "rgba(var(--main-orange-rgb), 0.04)!important",

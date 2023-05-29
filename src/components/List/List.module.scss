@@ -194,6 +194,14 @@
 .List-dark{
 
 
+  .List__aside{
+    label{
+      &:focus-within{
+        outline-color: white;
+      }
+    }
+  }
+
   .List__card{
     background-color: rgba(33, 43, 54, 1);
 
