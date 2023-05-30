@@ -1,5 +1,11 @@
+import List from "../components/List/List";
+
 function ListPage() {
-  return <div>ListPage</div>;
+  return (
+    <main>
+      <List />
+    </main>
+  );
 }
 
 export default ListPage;

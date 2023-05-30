@@ -82,5 +82,37 @@
     "divider": "Учащиеся",
     "divider2": "Курсы",
     "divider3":"Выпускники"
+  },
+  "List": {
+    "title": "Курсы",
+    "filter": "Фильтр",
+    "aside": {
+      "search": "Поиск",
+      "rating": "Оценка",
+      "up": "и выше",
+      "duration": "Продолжительность",
+      "category": "Категория",
+      "level": "Уровень",
+      "fee": "Цена",
+      "language": "Язык",
+      "all": "Все",
+      "select": {
+        "up": "и выше",
+        "hours": "часов",
+        "management": "Менеджмент",
+        "design": "Дизайн",
+        "development": "Разработка",
+        "Beginner": "Новичок",
+        "Intermediate": "Средний",
+        "Advanced": "Продвинутый",
+        "ru": "Русский",
+        "en": "Английский"
+      },
+      "card": {
+        "bestseller": "бестселлер",
+        "reviews": "обзоров",
+        "students": "студентов"
+      }
+    }
   }
 }

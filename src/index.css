@@ -40,6 +40,17 @@ code {
 }
 
 
+
+body{
+  padding: 0!important;
+}
+
+
+
 .MuiFormControlLabel-root{
   margin: 0!important;
+}
+
+.Mui-selected{
+  background-color: rgba(0, 0, 0, 0.08)!important;
 }

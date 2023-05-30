@@ -81,5 +81,37 @@
     "divider": "Learners",
     "divider2": "Courses",
     "divider3":"Graduates"
+  },
+  "List": {
+    "title": "Courses",
+    "filter": "Filter",
+    "aside": {
+      "search": "Search",
+      "rating": "Z",
+      "up": "& Up",
+      "duration": "Duration",
+      "category": "Category",
+      "level": "Level",
+      "fee": "Fee",
+      "language": "Language",
+      "all": "All",
+      "select": {
+        "up": "& up",
+        "hours": "hours",
+        "management": "Management",
+        "design": "Design",
+        "development": "Development",
+        "Beginner": "Beginner",
+        "Intermediate": "Intermediate",
+        "Advanced": "Advanced",
+        "ru": "Russian",
+        "en": "English"
+      },
+      "card": {
+        "bestseller": "best seller",
+        "reviews": "reviews",
+        "students": "students"
+      }
+    }
   }
 }

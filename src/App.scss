@@ -9,8 +9,10 @@
   background: rgb(255, 255, 255);
 
   main{
+    padding-top: 95px;
     overflow-x: hidden;
   }
+
 }
 
 
@@ -18,10 +20,9 @@
 .App *{
   color: #212B36;
   transition: 0.2s;
-
   
   p{
-    font-size: 14px;
+    font-size: 15px;
     color: var(--p-color);
   }
 }
@@ -134,4 +135,22 @@ textarea{
   hr{
     background-color: rgba(255, 255, 255, 0.3);
   } 
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px){
+  .App{
+  
+    main{
+      padding-top: 80px;
+    }
+  }
 }
