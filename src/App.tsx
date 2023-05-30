@@ -33,12 +33,18 @@ function App() {
                 backgroundColor: darkScheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
               },
             }),
+            ...(ownerState.size === 'small' &&{
+              borderRadius: '8px',
+              ".MuiButtonBase-root": {
+                padding: '4px 10px',
+              },
+            }),
             ...(ownerState.size === 'medium' &&{
               borderRadius: '8px',
               ".MuiButtonBase-root": {
                 padding: '6px 16px',
               },
-              }),
+            }),
             ...(ownerState.size === 'large' &&{
               borderRadius: '8px',
               ".MuiButtonBase-root": {
@@ -52,6 +58,9 @@ function App() {
                 '&:hover': {
                   backgroundColor: darkScheme ? '#a2aab3' : 'rgba(69, 79, 91, 1)',
                   boxShadow: 'none'
+                },
+                '& img': {
+                  filter: darkScheme ?  'contrast(0) brightness(0%)' : ''
                 },
               }),
               ...(ownerState.disabled &&{

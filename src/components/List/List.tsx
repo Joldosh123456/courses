@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Button,
   FormControl,
   MenuItem,
   Pagination,
@@ -17,6 +18,7 @@ import ic_search from "../../assets/List/ic_search.svg";
 import ic_star from "../../assets/List/ic_star.svg";
 import ic_clock from "../../assets/List/ic_clock.svg";
 import ic_skillLevel from "../../assets/List/ic_skill_level.svg";
+import ic_filter from "../../assets/List/ic_filter.svg";
 import i18n from "../../i18n";
 
 function List() {
@@ -94,6 +96,12 @@ function List() {
   ) => {
     setPage(value);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [page])
 
   const defineState = (index: number) => {
     switch (index) {
@@ -316,24 +324,28 @@ function List() {
   );
 
   useEffect(() => {
-    let arrayCopy = coursesData.slice(0)
-    let search = searchValue.trim().toLowerCase().split(' ')    
-    
+    let arrayCopy = coursesData.slice(0);
+    let search = searchValue.trim().toLowerCase().split(" ");
 
     let newArray = arrayCopy.filter((elem, index) => {
-      let title = elem.title.toLowerCase().split(' ')
-      
-      const firstWordIndex = title.findIndex(elem2 => elem2.substring(0, search[0].length) == search[0])
+      let title = elem.title.toLowerCase().split(" ");
+
+      const firstWordIndex = title.findIndex(
+        (elem2) => elem2.substring(0, search[0].length) == search[0]
+      );
 
       if (firstWordIndex > -1) {
-
-        if (title.splice(firstWordIndex, search.length).join(' ').substring(0, search.join(' ').length) == search.join(' ')) {
-          return elem
+        if (
+          title
+            .splice(firstWordIndex, search.length)
+            .join(" ")
+            .substring(0, search.join(" ").length) == search.join(" ")
+        ) {
+          return elem;
         }
-        
       }
-      return      
-    })
+      return;
+    });
 
     let finalArray = newArray.filter(
       (elem, index) =>
@@ -349,55 +361,50 @@ function List() {
     setCoursesArray(finalArray);
   }, [starsActive, category, level, duration, fee, searchValue]);
 
-  // useEffect(() => {
-  //   let arrayCopy = coursesData.slice(0)
-  //   let search = searchValue.trim().toLowerCase().split(' ')    
-    
 
-  //   let newArray = arrayCopy.filter((elem, index) => {
-  //     let title = elem.title.toLowerCase().split(' ')
-      
-  //     const firstWordIndex = title.findIndex(elem2 => elem2.substring(0, search[0].length) == search[0])
 
-  //     if (firstWordIndex > -1) {
+  const [isFilterActive, setIsFilterActive] = useState(false);
+  let body = document.querySelector('body') as HTMLElement
 
-  //       if (title.splice(firstWordIndex, search.length).join(' ').substring(0, search.join(' ').length) == search.join(' ')) {
-  //         return elem
-  //       }
-        
-  //     }
-  //     return      
-  //   })
-    
-  //   setCoursesArray(newArray);
-  // }, [searchValue])
+  useEffect(() => {
+    if (isFilterActive) {
+      body.style.overflow = 'hidden'
+    } else{
+      body.style.overflow = 'auto'
+    }
+  }, [isFilterActive])
 
-  // useEffect(() => {
-  //   let arrayCopy = coursesData.filter((elem, index) =>
-  //     category ? elem.category == category : elem
-  //   );
-  //   setCoursesArray(arrayCopy);
-  // }, [category]);
-
-  // useEffect(() => {
-  //   let arrayCopy = coursesData.filter((elem, index) =>
-  //     level ? elem.level == level : elem
-  //   );
-  //   setCoursesArray(arrayCopy);
-  // }, [level]);
 
   return (
-    <article className={`${darkScheme ? css["List-dark"] : ""} pt-10 pb-28`}>
+    <article
+      className={`${css["List"]} ${darkScheme ? css["List-dark"] : ""} pt-10 pb-28 relative overflow-hidden`}
+    >
       <div
-        className={`container ${css["List__container"]} flex flex-col sm:grid gap-16`}
+        className={`container ${css["List__container"]} flex flex-col lg:grid gap-16`}
       >
-        <div className={`${css["List__title"]} h-fit col-start-1 col-end-3`}>
+        <div
+          className={`${css["List__title"]} h-fit col-start-1 col-end-3 flex items-center justify-between`}
+        >
           <h1 className="text-3xl sm:text-5xl font-bold">{t("List.title")}</h1>
+
+          <Button
+            variant="contained"
+            color="secondary"
+            className={`${css["List__filter-button"]} flex !items-items gap-2 lg:!hidden`}
+            size="large"
+            onClick={() => setIsFilterActive(true)}
+          >
+            <img src={ic_filter} alt="ic_filter.svg" />
+            {t("List.filter")}
+          </Button>
         </div>
 
         <div
-          className={`col-start-1 col-end-2 row-start-2 row-end-4 flex flex-col items-center`}
+          className={`${css["List__aside-container"]} ${
+            isFilterActive ? css["List__aside-container_active"] : "F"
+          } col-start-1 col-end-2 row-start-2 row-end-4 flex flex-col items-center absolute lg:static`}
         >
+          <div className={`${css["List__aside-background"]}`} onClick={() => setIsFilterActive(false)}></div>
           <div className={`${css["List__aside-copy"]}`}></div>
           <aside className={`${css["List__aside"]} flex flex-col gap-6`}>
             <div>
@@ -438,9 +445,9 @@ function List() {
           className={`${css["List__pages"]} col-start-2 col-end-3 row-start-2 row-end-4 flex flex-col items-center justify-between gap-20`}
         >
           <div
-            className={`${css["List__cards-container"]} flex flex-col gap-8`}
+            className={`${css["List__cards-container"]} flex flex-col items-center justify-between gap-8`}
           >
-            {renderCoursesCards}
+            {renderCoursesCards.length ? renderCoursesCards : 'Empty...'}
           </div>
 
           <Pagination

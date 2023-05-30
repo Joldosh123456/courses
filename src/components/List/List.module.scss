@@ -2,6 +2,14 @@
   grid-template-columns: 1fr 3fr;
   grid-auto-rows: auto;
 
+
+  .List__filter-button{
+
+    img{
+      margin-bottom: 2px;
+    }
+  }
+
   .List__aside{
 
 
@@ -74,9 +82,9 @@
 
     .List__cards-container{
       width: 100%;
-      min-height: 2730px;
 
       .List__card{
+        width: 100%;
         position: relative;
 
         box-shadow: -10px 10px 40px -8px rgba(145, 158, 171, 0.16);
@@ -218,10 +226,12 @@
 
 
 
-@media screen and (max-width: 576px) {
-  .List__cards-container{
-    min-height: 5650px!important;
+@media screen and (max-width: 639px) {
+  .List__filter-button{
+    padding: 4px 10px;
   }
+
+
   .List__card-left{
     width: 100%!important;
     min-height: 300px;
@@ -234,6 +244,84 @@
 
     > h1:nth-of-type(1){
       margin-top: 4px!important;
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .List{
+    padding-bottom: 80px;
+
+    .List__cards-container{
+      min-height: calc(70vh - 80px);
+      justify-content: space-between;
+    }
+  }
+
+
+  .List__aside-container{
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    opacity: 0;
+    pointer-events: none;
+
+    overflow: hidden;
+
+    .List__aside-background{
+      width: 100%;
+      height: 100%;
+
+      position: absolute;  
+      top: 0;
+      left: 0;
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+
+    .List__aside{
+      width: 70%;
+      max-width: 300px;
+      height: 100%;
+
+      padding: 34px 24px;
+
+      background-color: white;
+
+      align-self: flex-end;
+      overflow: scroll;
+
+      transform: translate(100%);
+    }
+  }
+
+  .List__aside-container_active{
+    opacity: 1;
+    pointer-events: auto;
+
+    .List__aside{
+      transform: translate(0);
+    }
+  }
+
+
+  .List-dark{
+
+    .List__aside-background{
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .List__aside{
+      background-color: rgba(22, 28, 36, 1);
     }
   }
 }
