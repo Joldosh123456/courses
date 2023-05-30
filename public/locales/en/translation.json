@@ -67,6 +67,7 @@
   },
   "List": {
     "title": "Courses",
+    "filter": "Filter",
     "aside": {
       "search": "Search",
       "rating": "Z",
