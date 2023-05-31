@@ -421,49 +421,34 @@ function Header() {
             <img src={searchIconLight} alt='search icon' />
           </Button>
 
-          <div className={`${css['header__search-modal-wrapper']} ${
-                isMobileSearchModal ? css["header__search-modal-wrapper_active"] : ""
-              }`}
+
+          <div
+            className={`${css["header__search-modal-wrapper"]} ${
+              isMobileSearchModal
+                ? css["header__search-modal-wrapper_active"]
+                : ""
+            }`}
           >
-            <Button
-              className={`${css["search-button_mobile"]} ${
-                isMobileSearchModal ? css["hide"] : ""
-              }`}
-              onClick={() =>
-                toggleModal(isMobileSearchModal, setIsMobileSearchModal)
-              }
+            <form
+              ref={mobileSearchModalRef}
+              className={`${css["header__search-modal"]} ${
+                css["header__search-modal-mobile"]
+              } ${isMobileSearchModal ? css["search-active"] : ""}`}
+              onSubmit={handleSubmit}
             >
-              <img src={searchIconLight} alt="search icon" />
-            </Button>
+              <input
+                type="text"
+                className={`${css["header__search-input"]} ${css["header__search-input-mobile"]}`}
+                value={mobileInputValue}
+                onChange={(e) => setMobileInputValue(e.target.value)}
+              />
 
-            <div
-              className={`${css["header__search-modal-wrapper"]} ${
-                isMobileSearchModal
-                  ? css["header__search-modal-wrapper_active"]
-                  : ""
-              }`}
-            >
-              <form
-                ref={mobileSearchModalRef}
-                className={`${css["header__search-modal"]} ${
-                  css["header__search-modal-mobile"]
-                } ${isMobileSearchModal ? css["search-active"] : ""}`}
-                onSubmit={handleSubmit}
+              <button
+                className={`${css["header__search-submit"]} ${css["header__search-submit-mobile"]}`}
               >
-                <input
-                  type="text"
-                  className={`${css["header__search-input"]} ${css["header__search-input-mobile"]}`}
-                  value={mobileInputValue}
-                  onChange={(e) => setMobileInputValue(e.target.value)}
-                />
-
-                <button
-                  className={`${css["header__search-submit"]} ${css["header__search-submit-mobile"]}`}
-                >
-                  <img src={searchIconLight} alt="search-icon" />
-                </button>
-              </form>
-            </div>
+                <img src={searchIconLight} alt="search-icon" />
+              </button>
+            </form>
           </div>
         </div>
 
