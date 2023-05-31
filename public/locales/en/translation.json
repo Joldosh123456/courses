@@ -113,5 +113,9 @@
         "students": "students"
       }
     }
+  },
+  "FeaturedCourses": {
+    "title": "Featured Courses",
+    "description": "Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet iaculis."
   }
 }
