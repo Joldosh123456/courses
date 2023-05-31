@@ -5,6 +5,7 @@ import Main from "../components/Main/Main";
 import Forget from '../components/Forget/Forget'
 import Teachers from '../components/Teachers/Teachers'
 import DownloadApp from '../components/DownloadApp/DownloadApp'
+import FeaturedCourses from "../components/FeaturedCourses/FeaturedCourses";
 
 
 
@@ -18,6 +19,7 @@ function HomePage() {
       <Main />
       <Brands />
       <Why />
+      <FeaturedCourses/>
       <Category />
       <Teachers/>
       <DownloadApp/>

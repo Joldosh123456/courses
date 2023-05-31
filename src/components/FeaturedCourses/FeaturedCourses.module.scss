@@ -1,0 +1,132 @@
+.FeaturedCourses__header {
+  .FeaturedCourses__swiper-buttons {
+    button {
+      top: 60%;
+      z-index: 10;
+
+      &:hover {
+        background-color: rgba(var(--p-color-dark-rgb), 0.2);
+      }
+      &:disabled {
+        background-color: rgba(var(--p-color-dark-rgb), 0.05);
+      }
+
+      &:nth-of-type(1){
+        left: -5%;
+      }
+      &:nth-of-type(2){
+        right: -5%;
+      }
+    }
+  }
+}
+
+.FeaturedCourses__swiper {
+  width: calc(100% + 30px);
+  
+  padding: 15px 15px;
+  margin-left: -15px;
+
+  .List__card {
+    height: 100%;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+
+
+    .List__card-left{
+      overflow: hidden;
+    }
+
+    .List__card-right {
+
+      > span{
+        color: var(--main-orange);
+      }
+
+      .List__card-right-footer {
+        span {
+          color: var(--p-color-dark);
+        }
+      }
+
+      .List__card-price {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+
+        span {
+          color: var(--p-color-dark);
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .bestseller-title {
+      display: none;
+
+      padding: 1px 8px;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+
+      background-color: rgba(255, 200, 26, 1);
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+
+      border-radius: 6px;
+
+      text-transform: uppercase;
+
+      user-select: none;
+    }
+
+    .bestseller {
+      .bestseller-title {
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.FeaturedCourses-dark{
+  .List__card{
+    background-color: rgba(33, 43, 54, 1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+  .FeaturedCourses__header {
+    .FeaturedCourses__swiper-buttons {
+      button {
+        &:hover {
+          background-color: transparent;
+        }
+        &:active {
+          background-color: rgba(var(--p-color-dark-rgb), 0.4);
+        }
+        &:disabled {
+          background-color: rgba(var(--p-color-dark-rgb), 0.05)!important;
+          img{
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

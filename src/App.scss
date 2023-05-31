@@ -81,6 +81,10 @@ button:active{
 }
 button[disabled]{
   background-color: rgba(136, 136, 136, 0.2);
+
+  img{
+    filter: opacity(0.5);
+  }
 }
 
 
