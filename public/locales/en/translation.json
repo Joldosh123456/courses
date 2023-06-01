@@ -117,5 +117,13 @@
   "FeaturedCourses": {
     "title": "Featured Courses",
     "description": "Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet iaculis."
+  },
+  "CourseDetailsHero": {
+    "lessons": "Lessons",
+    "quizzes": "Quizzes",
+    "Beginner": "Beginner",
+    "english": "English",
+    "hours": "hours",
+    "teachers": "teachers"
   }
 }

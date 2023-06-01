@@ -1,7 +1,10 @@
+import CourseDetailsHero from "../components/CourseDetailsHero/CourseDetailsHero"
 
 function DetailsPage() {
   return (
-    <div>DetailsPage</div>
+    <main>
+      <CourseDetailsHero />
+    </main>
   )
 }
 
