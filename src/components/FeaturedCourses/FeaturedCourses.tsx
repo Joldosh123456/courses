@@ -24,10 +24,9 @@ function FeaturedCourses() {
 
   useEffect(() => {
     dispatch(fetchGetCourses());
-  }, []);
-
+  }, [])
+  
   useEffect(() => {
-    dispatch(fetchGetCourses());
     setCoursesArray(coursesData);
   }, [coursesData]);
 
@@ -37,7 +36,7 @@ function FeaturedCourses() {
   const renderCoursesCards = useMemo(
     () =>
       coursesArray.map((elem, index) => (
-        <SwiperSlide>
+        <SwiperSlide key={Date.now() + index}>
           <section
             key={Date.now() + index}
             className={`${css["List__card"]} ${
