@@ -10,7 +10,7 @@
 
       a{
         white-space: nowrap;
-        
+
         &:hover{
           opacity: 0.6;
         }
@@ -133,6 +133,9 @@
     }
   }
 
+  .bestseller-title{
+    color: rgba(33, 43, 54, 1);
+  }
 
   .CourseDetailsHero__left-particulars{
     img{

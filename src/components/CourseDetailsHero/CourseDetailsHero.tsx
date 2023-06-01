@@ -195,7 +195,7 @@ function CourseDetailsHero() {
                   <h2 className="text-sm">
                     {currCourse.user.name}{" "}
                     <span className="ml-1 underline opacity-70">
-                      +10 teachers
+                      +10 {t('CourseDetailsHero.teachers')}
                     </span>
                   </h2>
                 </div>
