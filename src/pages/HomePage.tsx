@@ -1,23 +1,27 @@
-import { useTranslation } from "react-i18next";
 import Brands from "../components/Brands/Brands";
 import Category from "../components/Category/Category";
 import Why from "../components/Why/Why";
 import Main from "../components/Main/Main";
 import Forget from "../components/Forget/Forget";
-import Feedback from "../components/Feedback/Feedback";
+import DownloadApp from "../components/DownloadApp/DownloadApp";
+import FeaturedCourses from "../components/FeaturedCourses/FeaturedCourses";
+import Teachers from "../components/Teachers/Teachers";
+
 
 function HomePage() {
-  const { t } = useTranslation();
   return (
-    <main>
+    <main className='pt-24'>
       <Main />
       <Brands />
       <Why />
+      <FeaturedCourses/>
       <Category />
       <Forget />
-      {/* <Feedback/> */}
+      <Teachers/>
+      <DownloadApp/>
+      <Forget/>
     </main>
-  );
+  )
 }
 
 export default HomePage;

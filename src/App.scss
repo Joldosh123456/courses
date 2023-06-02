@@ -7,6 +7,12 @@
   justify-content: flex-end;
 
   background: rgb(255, 255, 255);
+
+  main{
+    padding-top: 95px;
+    overflow-x: hidden;
+  }
+
 }
 
 
@@ -14,10 +20,9 @@
 .App *{
   color: #212B36;
   transition: 0.2s;
-
   
   p{
-    font-size: 14px;
+    font-size: 15px;
     color: var(--p-color);
   }
 }
@@ -76,6 +81,10 @@ button:active{
 }
 button[disabled]{
   background-color: rgba(136, 136, 136, 0.2);
+
+  img{
+    filter: opacity(0.5);
+  }
 }
 
 
@@ -130,4 +139,22 @@ textarea{
   hr{
     background-color: rgba(255, 255, 255, 0.3);
   } 
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px){
+  .App{
+  
+    main{
+      padding-top: 80px;
+    }
+  }
 }

@@ -26,6 +26,8 @@ code {
   --p-color-rgb: 99, 115, 129;
   --p-color-dark: rgba(145, 158, 171, 1);
   --p-color-dark-rgb: 145, 158, 171;
+  --darkMode-background: rgba(33, 43, 54, 1);
+  --darkMode-background-rgb: 33, 43, 54, 1;
 }
 
 
@@ -38,6 +40,17 @@ code {
 }
 
 
+
+body{
+  padding: 0!important;
+}
+
+
+
 .MuiFormControlLabel-root{
   margin: 0!important;
+}
+
+.Mui-selected{
+  background-color: rgba(0, 0, 0, 0.08)!important;
 }

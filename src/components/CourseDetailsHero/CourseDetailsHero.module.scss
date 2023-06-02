@@ -1,0 +1,197 @@
+.CourseDetailsHero{
+  min-height: 50vh;
+
+  .CourseDetailsHero__container{
+
+    .CourseDetailsHero__breadcrumb-nav{
+      width: 100%;
+
+      overflow: auto;
+
+      a{
+        white-space: nowrap;
+
+        &:hover{
+          opacity: 0.6;
+        }
+        &:active{
+          transition: 0s;
+          opacity: 0.3;
+        }
+      }
+
+      img{
+        user-select: none;
+      }
+
+      > a:last-of-type{
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .CourseDetailsHero__content{
+
+    .CourseDetailsHero__left{
+
+      .bestseller-title{
+        width: fit-content;
+
+        padding: 3px 8px;
+
+        background-color: rgba(255, 200, 26, 1);
+
+        border-radius: 6px;
+
+        text-transform: uppercase;
+      }
+
+
+      .category{
+        color: rgba(34, 184, 207, 1);
+      }
+
+      hr{
+        background: none;
+
+        border-top: 1px dashed rgba(var(--p-color-dark-rgb), 0.24);
+      }
+    }
+
+    .CourseDetailsHero__right{
+      width: 40%;
+
+
+      .CourseDetailsHero__right-foreground{
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) -1.23%, #000000 80%);
+        transition: 0.5s;
+      }
+
+      > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: video 5s infinite paused;
+      }
+
+      button{
+        background-color: white;
+        transition: 0.5s, background-color 0.2s;
+
+        &:hover{
+          background-color: rgb(250,84,28);
+          img{
+            filter: contrast(0) brightness(200%);
+          }
+        }
+        &:active{
+          transition: 0s;
+          background-color: rgb(159, 53, 18);
+        }
+
+        img{
+          width: 20px;
+        }
+      }
+    } 
+
+    .CourseDetailsHero__right_active{
+      cursor: pointer;
+
+      > img{
+        animation-play-state: running;
+      }
+
+      .CourseDetailsHero__right-foreground{
+        opacity: 0;
+      }
+
+      button{
+        opacity: 0;
+        pointer-events: none;
+      }
+    } 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.CourseDetailsHero-dark{
+  .CourseDetailsHero__breadcrumb-nav{
+
+    img{
+      filter: contrast(0) brightness(200%);
+    }
+  }
+
+  .bestseller-title{
+    color: rgba(33, 43, 54, 1);
+  }
+
+  .CourseDetailsHero__left-particulars{
+    img{
+      filter: contrast(0) brightness(200%);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+  .CourseDetailsHero__left{
+    width: 100%;
+  }
+  
+  .CourseDetailsHero__right{
+    width: 100%!important;
+  }
+
+  .CourseDetailsHero__left-particulars{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(0px, 1fr);
+    grid-gap: 24px 0;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .CourseDetailsHero__left-particulars{
+    width: 100%;
+  }
+}
+
+
+
+
+
+@keyframes video {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}

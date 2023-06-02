@@ -39,6 +39,23 @@
       "students": "students"
     }
   },
+  "DownloadApp": {
+    "App": "Download App",
+    "DeskApp": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.",
+    "Scan": "Scan QR code to install on your device",
+    "ButtonMui": "Download from"
+  },
+  "Teachers": {
+    "title": "Meet Our Teachers",
+    "description": "Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases",
+    "cards": {
+      "ui-designer": "UI Designer",
+      "hr-manager": "Hr Manager",
+      "leader": "Leader",
+      "project-manager": "Project Manager"
+    },
+    "button": "View All Teachers"
+  },
   "Forget": {
     "title": "Register Now Forget 20% Discount Every Courses",
     "description": "Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed magna purus, fermentum eu",
@@ -86,6 +103,51 @@
     "placeholder2":"Email",
     "placeholder3":"Subject",
     "placeholder4":"Message",
-    "btnText": "Send Message"
+    "btnText": "Send Message",
+    "divider3":"Graduates"
+  },
+  "List": {
+    "title": "Courses",
+    "filter": "Filter",
+    "aside": {
+      "search": "Search",
+      "rating": "Z",
+      "up": "& Up",
+      "duration": "Duration",
+      "category": "Category",
+      "level": "Level",
+      "fee": "Fee",
+      "language": "Language",
+      "all": "All",
+      "select": {
+        "up": "& up",
+        "hours": "hours",
+        "management": "Management",
+        "design": "Design",
+        "development": "Development",
+        "Beginner": "Beginner",
+        "Intermediate": "Intermediate",
+        "Advanced": "Advanced",
+        "ru": "Russian",
+        "en": "English"
+      },
+      "card": {
+        "bestseller": "best seller",
+        "reviews": "reviews",
+        "students": "students"
+      }
+    }
+  },
+  "FeaturedCourses": {
+    "title": "Featured Courses",
+    "description": "Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet iaculis."
+  },
+  "CourseDetailsHero": {
+    "lessons": "Lessons",
+    "quizzes": "Quizzes",
+    "Beginner": "Beginner",
+    "english": "English",
+    "hours": "hours",
+    "teachers": "teachers"
   }
 }
