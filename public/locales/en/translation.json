@@ -55,14 +55,37 @@
   },
   "main": {
     "title": "Free",
-    "title2":"Online",
-    "title3":"Courses",
-    "title4":"From The Experts",
+    "title2": "Online",
+    "title3": "Courses",
+    "title4": "From The Experts",
     "desc": "Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. ",
-    "btnText":"Ready Start",
-    "btnText1":"Watch Video",
+    "btnText": "Ready Start",
+    "btnText1": "Watch Video",
     "divider": "Learners",
     "divider2": "Courses",
-    "divider3":"Graduates"
+    "divider3": "Graduates"
+  },
+  "feedback": {
+    "title": "What Our Students Say",
+    "description": "Amazing experience i love it a lot. Thanks to the team that dreams come true, great! I appreciate there attitude and approach. Truly professionals!",
+    "students": "Robert Fox",
+    "profession": "Designer"
+  },
+  "location":{
+    "title": "Get In Touch",
+    "subtitle": "Email",
+    "subtitle2": "Phone",
+    "subtitle3": "Location",
+    "description": "3891 Ranchview Dr. Richardson, California 62639",
+    "text": "FOLLOW US"
+  },
+  "contact":{
+    "title": "Drop us a line",
+    "description": "We normally respond within 2 business days",
+    "placeholder":"Name",
+    "placeholder2":"Email",
+    "placeholder3":"Subject",
+    "placeholder4":"Message",
+    "btnText": "Send Message"
   }
 }

@@ -1,0 +1,137 @@
+.wrapper {
+  background: #f9fafb;
+}
+.location {
+  margin: 160px 0;
+  display: flex;
+  justify-content: space-between;
+  .rightContent {
+    h1 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 64px;
+      margin-bottom: 40px;
+    }
+    .iconLocation {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 26px;
+      margin-bottom: 24px;
+    }
+    .dashed {
+      width: 366px;
+      border: 1px dashed rgba(145, 158, 171, 0.24);
+      margin-bottom: 24px;
+    }
+    .shareBox {
+      display: flex;
+      gap: 30px;
+    }
+    h4 {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 26px;
+    }
+  }
+  .leftContent {
+    .gps {
+      border-radius: 16px;
+    }
+  }
+}
+.Location-dark {
+  background-color: rgba(var(--p-color-dark-rgb), 0.12);
+}
+.Location-dark .shareBox img {
+  filter: contrast(0) brightness(200%);
+}
+.Location-dark .rightContent .iconLocation img {
+  filter: contrast(0) brightness(200%);
+}
+
+@media screen and (max-width: 1170px) {
+  .location {
+    .gps {
+      width: 500px;
+    }
+  }
+}
+@media screen and (max-width: 976px) {
+  .location {
+    .gps {
+      width: 400px;
+    }
+  }
+}
+@media screen and (max-width: 868px) {
+  .location {
+    .gps {
+      width: 300px;
+    }
+  }
+}
+@media screen and (max-width: 766px) {
+  .location {
+    .rightContent {
+      h1 {
+        font-size: 44px;
+      }
+      .dashed {
+        width: 260px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 666px) {
+  .location {
+    .rightContent {
+      h1 {
+        font-size: 36px;
+        line-height: 24px;
+      }
+      b,
+      p {
+        font-size: 12px;
+      }
+      .dashed {
+        width: 234px;
+      }
+    }
+    .leftContent {
+      .gps {
+        height: 400px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .location {
+    display: block;
+    text-align: center;
+    .rightContent {
+      .iconLocation,
+      .shareBox {
+        justify-content: center;
+      }
+      .dashed {
+        width: 100%;
+      }
+    }
+    .leftContent {
+      .gps {
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+  }
+}
