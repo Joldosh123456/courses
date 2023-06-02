@@ -1,6 +1,8 @@
 .CourseDetailsHero{
   min-height: 50vh;
 
+  background-color: rgba(249, 250, 251, 1);
+
   .CourseDetailsHero__container{
 
     .CourseDetailsHero__breadcrumb-nav{
@@ -126,6 +128,8 @@
 
 
 .CourseDetailsHero-dark{
+  background-color: rgba(var(--p-color-dark-rgb), 0.12);
+  
   .CourseDetailsHero__breadcrumb-nav{
 
     img{

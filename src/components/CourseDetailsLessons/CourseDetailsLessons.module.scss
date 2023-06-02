@@ -1,0 +1,235 @@
+.CourseDetailsLessons{
+  
+  .CourseDetailsLessons__left{
+    width: 70%;
+
+    .CourseDetailsLessons__skills-container{
+      > div{
+        background-color: rgba(var(--p-color-dark-rgb), 0.16);
+        cursor: default;
+        user-select: none;
+
+        &:hover{
+          background-color: rgba(var(--p-color-dark-rgb), 0.32);
+        }
+      }
+    } 
+
+    .CourseDetailsLessons__socials-container{
+      > a{
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid black;
+
+        &:active{
+          transition: 0s;
+        }
+
+        p{
+          font-size: 14px;
+        }
+      }
+
+      .facebook{
+        border-color: rgba(24, 119, 242, 1);
+
+        &:hover{
+          background-color: rgba(24, 119, 242, 0.1);
+        }
+        &:active{
+          background-color: rgba(24, 119, 242, 0.3);
+        }
+
+        p{
+          color: rgba(24, 119, 242, 1);
+        }
+      }
+      .instagram{
+        border-color: rgba(224, 45, 105, 1);
+
+        &:hover{
+          background-color: rgba(224, 45, 105, 0.1);
+        }
+        &:active{
+          background-color: rgba(224, 45, 105, 0.3);
+        }
+
+        p{
+          color: rgba(224, 45, 105, 1);
+        }
+      }
+      .linkedIn{
+        border-color: rgba(0, 126, 187, 1);
+
+        &:hover{
+          background-color: rgba(0, 126, 187, 0.1);
+        }
+        &:active{
+          background-color: rgba(0, 126, 187, 0.3);
+        }
+        
+        p{
+          color: rgba(0, 126, 187, 1);
+        }
+      }
+      .twitter{
+        border-color: rgba(0, 170, 236, 1);
+
+        &:hover{
+          background-color: rgba(0, 170, 236, 0.1);
+        }
+        &:active{
+          background-color: rgba(0, 170, 236, 0.3);
+        }
+
+        p{
+          color: rgba(0, 170, 236, 1);
+        }
+      }
+    } 
+
+
+    .CourseDetailsLessons__instructors-container{
+
+      .CourseDetailsLessons__instructor{
+        border: 1px solid rgba(var(--p-color-dark-rgb), 0.24);
+
+        > img{
+          width: 72px;
+        }
+
+        .CourseDetailsLessons__instructor-right{
+
+          > p{
+            font-size: 13px;
+          }
+        }
+
+        h2, span{
+          color: var(--p-color-dark);
+          font-size: 13px;
+
+          span{
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+  .CourseDetailsLessons__aside{
+    width: 30%;
+
+    .CourseDetailsLessons__course-includes{
+      box-shadow: 0px 5px 25px 0px rgba(145, 158, 171, 0.16);
+  
+      h1{
+        font-size: 36px;
+  
+        span{
+          font-size: 24px;
+          color: var(--p-color-dark);
+        }
+      }
+  
+      h2{
+        font-size: 14px;
+      }
+    }
+  
+  
+  }
+
+  .CourseDetailsLessons__advertisement{
+    width: 100%;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .advertiesment-overlay{
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) -1.23%, #000000 80%);
+    }
+
+
+    .CourseDetailsLessons__advertisement-text{
+      h1{
+        color: rgba(34, 184, 207, 1);
+        font-size: 24px;
+      }
+
+      p{
+        color: white;
+      }
+
+      button{
+        margin-top: 16px;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+.CourseDetailsLessons-dark{
+  .CourseDetailsLessons__course-includes{
+    background-color: rgba(33, 43, 54, 1);
+    box-shadow: none!important;
+
+    p{
+      color: white;
+    }
+
+    img{
+      filter: contrast(0) brightness(200%);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .CourseDetailsLessons__left{
+    width: 55%!important;
+  }
+
+
+  .CourseDetailsLessons__aside{
+    width: 45%!important;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 599px) {
+  .CourseDetailsLessons__left{
+    width: 100%!important;
+  }
+
+
+  .CourseDetailsLessons__aside{
+    width: 100%!important;
+  }
+}
