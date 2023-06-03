@@ -1,0 +1,117 @@
+.CourseDetailsReviews{
+  padding: 120px 0;
+
+  .CourseDetailsReviews__content{
+    width: 70%;
+
+    .CourseDetailsReviews__reviews-container{
+  
+      .CourseDetailsReviews__review{
+        padding: 35px 0;
+  
+        img{
+          width: 64px;
+          height: 64px;
+        }
+  
+        .CourseDetailsReviews__review-header{
+          :nth-child(1n){
+            height: fit-content;
+          }
+  
+          .CourseDetailsReviews__review-stars{
+    
+            img{
+              width: 18px;
+            }
+          }
+        }
+  
+        small{
+          color: var(--p-color-dark);
+        }
+  
+        p{
+          color: rgba(33, 43, 54, 1)
+        }
+  
+        .CourseDetailsReviews__review-buttons{
+          button{
+            padding: 4px 14px;
+  
+            display: flex;
+            align-items: center;
+            gap: 8px;
+  
+            font-weight: 600;
+  
+            img{
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+  
+        .CourseDetailsReviews__review-replies{
+          > div{
+            border-bottom: 1px solid rgba(var(--p-color-dark-rgb), 0.3);
+          }
+        }
+      }
+    }
+  }
+
+
+  .CourseDetailsReviews__aside{
+    width: 30%;
+    height: fit-content;
+    
+    border: 1px solid rgba(var(--p-color-dark-rgb), 0.24);
+
+    .CourseDetailsReviews__aside-header{
+      > h1{
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      svg{
+        width: 24px;
+      }
+    }
+  }
+
+  .CourseDetailsReviews__aside-statistic{
+    text-align: center;
+
+    span{
+      h1{
+        min-width: 15px;
+      }
+    }
+
+    > div{
+      height: 6px;
+      background-color: rgba(var(--p-color-dark-rgb), 0.12);
+      > div{
+        background-color: var(--p-color-dark);
+      }
+    }
+
+    p{
+      min-width: 15px;
+    }
+  }
+
+  button{
+
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    p{
+      color: rgba(250, 84, 28, 1);
+    }
+
+  }
+}
