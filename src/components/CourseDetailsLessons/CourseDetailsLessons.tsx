@@ -20,6 +20,7 @@ import { useAppSelector } from "../../hooks/hooks";
 import { courseIncludesArr, instructorsArr, learningsArr, lessonsArr, skillsArr, socialsArr } from "../../constants/CourseDetailsLessons";
 import { course } from "../../constants/List";
 import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 
 function CourseDetailsLessons() {
   const {courseId} = useParams()
@@ -106,7 +107,7 @@ function CourseDetailsLessons() {
           >
             <img src={elem.isLocked ? ic_locked : ic_play} alt={elem.isLocked ? 'ic_locked' : 'ic_play'} />
             <Typography>
-              {elem.title} {elem.id}
+              {elem.title ? elem.title : t('CourseDetailsLessons.lesson')} {elem.id}
             </Typography>
             <Typography className="absolute right-4">
               {elem.duration > 60 ? `${Math.floor(elem.duration/60)}:${elem.duration%60}` : elem.duration}
@@ -118,7 +119,7 @@ function CourseDetailsLessons() {
           </AccordionDetails>
         </Accordion>
       )),
-    [lessonsArr, darkScheme]
+    [lessonsArr, darkScheme, i18n.language]
   );
 
 
@@ -135,10 +136,10 @@ function CourseDetailsLessons() {
   const renderSkills = useMemo(() => (
     skillsArr.map((elem, index) => (
       <div key={Date.now() + index} className="px-3 py-2 text-xs rounded-lg">
-        <p>{elem}</p>
+        <p>{t('CourseDetailsLessons.'+elem)}</p>
       </div>
     ))
-  ), [skillsArr])
+  ), [skillsArr, i18n.language])
 
 
   const renderSocials = useMemo(() => (
@@ -158,9 +159,9 @@ function CourseDetailsLessons() {
 
         <div className={`${css['CourseDetailsLessons__instructor-right']} [&>div]:flex [&>div]:items-center flex flex-col gap-2`}>
           <h1 className="text-lg font-semibold">{elem.name}</h1>
-          <p>
+          <p className="capitalize">
             {elem.prof.map((elem2, index2, arr) => (
-              <React.Fragment key={Date.now() + index2}>{index2 != arr.length-1 ? elem2 + ', ' : elem2}</React.Fragment>
+              <React.Fragment key={Date.now() + index2}>{index2 != arr.length-1 ? t('CourseDetailsLessons.instructorObj.'+elem2) + ', ' : t('CourseDetailsLessons.instructorObj.'+elem2)}</React.Fragment>
             ))}
           </p>
           
@@ -193,32 +194,32 @@ function CourseDetailsLessons() {
             </svg>
           </span>
           <h1 className="text-lg font-semibold">{elem.rating.toFixed(1)}</h1>
-          <p>({elem.ratings} ratings)</p>
+          <p>({elem.ratings} {t('CourseDetailsLessons.instructorObj.ratings')})</p>
           </div>
 
           <div className="gap-2">
             <img src={ic_users_group} alt="ic_users_group" />
-            <h2><span>{elem.students > 1000 ? elem.students / 1000+'k' : ''}</span> students</h2>
+            <h2><span>{elem.students > 1000 ? elem.students / 1000+'k' : ''}</span> {t('CourseDetailsLessons.instructorObj.students')}</h2>
           </div>
 
           <div className="gap-3">
             <img src={ic_book} alt="ic_book" />
-            <h2><span>{elem.courses}</span> courses</h2>
+            <h2><span>{elem.courses}</span> {t('CourseDetailsLessons.instructorObj.courses')}</h2>
           </div>
         </div>
       </div>
     ))
-  ), [instructorsArr])
+  ), [instructorsArr, i18n.language])
 
 
   const renderCourseIncludes = useMemo(() => (
     courseIncludesArr.map((elem, index) => (
       <h2 key={Date.now() + index} className="flex items-start gap-2">
         <img src={elem.img} alt={elem.title} />
-        {elem!.amount} {elem.title}
+        {elem!.amount} {t('CourseDetailsLessons.aside.' + elem.title)}
       </h2>
     ))
-  ), [courseIncludesArr])
+  ), [courseIncludesArr, i18n.language])
 
 
   return (
@@ -226,38 +227,38 @@ function CourseDetailsLessons() {
       <div className="container flex flex-col sm:flex-row gap-16">
         <div className={`${css["CourseDetailsLessons__left"]} flex flex-col gap-10 [&>section>h1]:text-xl sm:[&>section>h1]:text-2xl [&>section>h1]:font-bold [&>section>h1]:mb-6`}>
           <section>
-            <h1>Lessons</h1>
+            <h1>{t('CourseDetailsLessons.lessons')}</h1>
 
             <div className="flex flex-col">{renderLessons}</div>
           </section>
 
           <section>
-            <h1>What You Will Learn</h1>
+            <h1>{t('CourseDetailsLessons.learn')}</h1>
 
             <div className="flex flex-col gap-2">{renderLearnings}</div>
           </section>
 
           <section>
-            <h1>Skills You Will Gain</h1>
+            <h1>{t('CourseDetailsLessons.skills')}</h1>
 
             <div className={`${css["CourseDetailsLessons__skills-container"]} flex flex-wrap gap-2`}>{renderSkills}</div>
           </section>
 
           <section>
-            <h1>Overview</h1>
+            <h1>{t('CourseDetailsLessons.overview')}</h1>
 
             <h2>Consentaneum aeternitate dignitati commoventur primisque cupit mea officia peccata parens egone dolorem minuis. Secundae neglegi sextilius conantur commodaita siti philosophi ioca tenere lorem apparet assentior pudoris sint leves neglegebat unde reliquisti simile. </h2>
           </section>
 
           <nav className={`${css["CourseDetailsLessons__socials-container"]} flex flex-wrap items-center`}>
-            <span className="mr-2 font-semibold">Share:</span> 
+            <span className="mr-2 font-semibold">{t('CourseDetailsLessons.share')}:</span> 
             {renderSocials}
           </nav>
 
           <hr className="w-full h-px" />
 
           <section>
-            <h1>Instructors({instructorsArr.length})</h1>
+            <h1>{t('CourseDetailsLessons.instructors')}({instructorsArr.length})</h1>
 
             <div className={`${css['CourseDetailsLessons__instructors-container']} grid grid-cols-1 gap-8 lg:grid-cols-2`}>
               {renderInstructors}
@@ -268,9 +269,9 @@ function CourseDetailsLessons() {
               <img src="https://s3-alpha-sig.figma.com/img/4ae3/204b/30dc35b0185eb37693374bd71cb453ed?Expires=1686528000&Signature=KC4RIPNoz3mMuWdG9kEfVD3RkdzRCug8oQdL6C5FEN0~GWuKFNOUnchWbescJS9~Lvj12urUjwW4-2HfxXu9qbC8m0~e9fZOZXldsuE9CsJFE2KBg0XM~IFuq59sdTglL37BXFcXBL4P~m5zKih6nrF-yec5waCzlmCi1ENajMnil7sNVLGiEF-I98NMzCL3tCf14e91~YUlPZN3SSTZGwSQxL-IZvYhds8pevTjH7iPX2Toh6wMLz7OhTc73IuZjU9klIfHUC7ikEmgQRbKMpbhTUjhirMq7nkO9syvmiKwMWKI00iRxhvlJsO2Gf~uQNurFMoWbFLwiu0G1SfaAw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="advertisement" />
               <div className={`${css['advertiesment-overlay']} absolute w-full h-full top-0 left-0`}></div>
               <div className={`${css['CourseDetailsLessons__advertisement-text']} w-full h-full p-10 flex flex-col items-center justify-end gap-2 absolute top-0 left-0 text-center`}>
-                <h1 className="font-bold">Advetisement</h1>
-                <p>Duis leo. Donec orci lectus, aliquam ut, faucibus non</p>
-                <Button variant="contained" color='primary'>Go Now</Button>
+                <h1 className="font-bold">{t('CourseDetailsLessons.advertisement.title')}</h1>
+                <p>{t('CourseDetailsLessons.advertisement.description')}</p>
+                <Button variant="contained" color='primary'>{t('CourseDetailsLessons.advertisement.button')}</Button>
               </div>
             </section>
         </div>
@@ -282,20 +283,20 @@ function CourseDetailsLessons() {
                 <span className="line-through">{currCourse.prevPrice?'$'+currCourse.prevPrice:''}</span> ${currCourse!.currPrice}
               </h1>
 
-              <p>This course includes:</p>
+              <p>{t('CourseDetailsLessons.aside.includes')}:</p>
 
               {renderCourseIncludes}
 
-              <Button variant="contained" color='primary' size="large">Enrol Now</Button>
+              <Button variant="contained" color='primary' size="large">{t('CourseDetailsLessons.aside.button')}</Button>
             </section>
 
             <section className={`${css["CourseDetailsLessons__advertisement"]} relative overflow-hidden rounded-2xl hidden sm:block`}>
               <img src="https://s3-alpha-sig.figma.com/img/4ae3/204b/30dc35b0185eb37693374bd71cb453ed?Expires=1686528000&Signature=KC4RIPNoz3mMuWdG9kEfVD3RkdzRCug8oQdL6C5FEN0~GWuKFNOUnchWbescJS9~Lvj12urUjwW4-2HfxXu9qbC8m0~e9fZOZXldsuE9CsJFE2KBg0XM~IFuq59sdTglL37BXFcXBL4P~m5zKih6nrF-yec5waCzlmCi1ENajMnil7sNVLGiEF-I98NMzCL3tCf14e91~YUlPZN3SSTZGwSQxL-IZvYhds8pevTjH7iPX2Toh6wMLz7OhTc73IuZjU9klIfHUC7ikEmgQRbKMpbhTUjhirMq7nkO9syvmiKwMWKI00iRxhvlJsO2Gf~uQNurFMoWbFLwiu0G1SfaAw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="advertisement" />
               <div className={`${css['advertiesment-overlay']} absolute w-full h-full top-0 left-0`}></div>
               <div className={`${css['CourseDetailsLessons__advertisement-text']} w-full h-full p-10 flex flex-col items-center justify-end gap-2 absolute top-0 left-0 text-center`}>
-                <h1 className="font-bold">Advetisement</h1>
-                <p>Duis leo. Donec orci lectus, aliquam ut, faucibus non</p>
-                <Button variant="contained" color='primary'>Go Now</Button>
+                <h1 className="font-bold">{t('CourseDetailsLessons.advertisement.title')}</h1>
+                <p>{t('CourseDetailsLessons.advertisement.description')}</p>
+                <Button variant="contained" color='primary'>{t('CourseDetailsLessons.advertisement.button')}</Button>
               </div>
             </section>
           </aside>
