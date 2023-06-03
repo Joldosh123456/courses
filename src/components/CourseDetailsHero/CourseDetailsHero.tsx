@@ -36,7 +36,7 @@ function CourseDetailsHero() {
 
   useEffect(() => {
     setCurrCourse(
-      coursesData.filter((elem) => elem.id === Number(courseId))[0]
+      coursesData.filter((elem: course) => elem.id === Number(courseId))[0]
     );
   }, [coursesData]);
 

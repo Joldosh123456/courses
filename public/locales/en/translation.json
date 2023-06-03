@@ -149,5 +149,43 @@
     "english": "English",
     "hours": "hours",
     "teachers": "teachers"
+  },
+  "CourseDetailsLessons": {
+    "lessons": "Lessons",
+    "lesson": "Lesson",
+    "learn": "What You Will Learn",
+    "skills": "Skills You Will Gain",
+    "overview": "Overview",
+    "share": "Share",
+    "instructors": "Instructors",
+    "photography": "Photography",
+    "design": "Design",
+    "art": "Art",
+    "history": "History",
+    "museums": "Museums",
+    "creativity": "Creativity",
+    "art history": "Art History",
+    "aside": {
+      "lessons": "lessons",
+      "includes": "This course includes",
+      "downloadable": "downloadable resourses",
+      "access": "Full lifetime access",
+      "devices": "Access on desktops, tablets, mobile",
+      "certificate": "Certificate of completion",
+      "button": "Enrol Now"
+    },
+    "advertisement": {
+      "title": "Advertisement",
+      "description": "Duis leo. Donec orci lectus, aliquam ut, faucibus non",
+      "button": "Go Now"
+    },
+    "instructorObj": {
+      "ratings": "ratings",
+      "students": "students",
+      "courses": "courses",
+      "designer": "desgner",
+      "illustrator": "illustrator",
+      "animator": "animator"
+    }
   }
 }
