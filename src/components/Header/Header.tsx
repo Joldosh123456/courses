@@ -223,6 +223,11 @@ function Header() {
   };
 
 
+  const handleNavSelectClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault()
+    setSelectModal((v) => !v)
+  }
+
   const renderNavLinks = navLinks.map((elem, index) => (
     <Link
       key={Date.now() + index}
@@ -231,7 +236,7 @@ function Header() {
         ${css['header__nav-link']} 
         ${elem.onClick ? `${css['header__nav-select']} ${isSelectModal ? css['header__nav-select_active'] : ''}` : ''}
       `}
-      onClick={elem.onClick ? () => setSelectModal((v) => !v) : undefined}
+      onClick={elem.onClick ? (e) => handleNavSelectClick(e) : undefined}
     >
       {t(elem.text)}
     </Link>

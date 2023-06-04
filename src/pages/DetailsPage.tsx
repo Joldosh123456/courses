@@ -4,6 +4,7 @@ import { useLocation } from 'react-router'
 import CourseDetailsHero from "../components/CourseDetailsHero/CourseDetailsHero"
 import CourseDetailsLessons from "../components/CourseDetailsLessons/CourseDetailsLessons"
 import CourseDetailsReviews from "../components/CourseDetailsReviews/CourseDetailsReviews"
+import Forget from '../components/Forget/Forget'
 import SimilarCourses from "../components/SimilarCourses/SimilarCourses"
 
 function DetailsPage() {
@@ -18,6 +19,7 @@ function DetailsPage() {
       <CourseDetailsLessons />
       <CourseDetailsReviews />
       <SimilarCourses />
+      <Forget />
     </main>
   )
 }
