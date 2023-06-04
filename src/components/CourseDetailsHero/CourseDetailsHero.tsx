@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { course } from "../../constants/List";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { fetchGetCourses } from "../../redux/slices/coursesSlice";
@@ -21,6 +21,7 @@ import { courseParticular } from "../../constants/CourseDetailsHero";
 function CourseDetailsHero() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
   const { t } = useTranslation();
+  const location = useLocation();
 
   const { courseId } = useParams();
   const coursesData = useAppSelector((state) => state.courses.coursesData);
@@ -38,7 +39,7 @@ function CourseDetailsHero() {
     setCurrCourse(
       coursesData.filter((elem: course) => elem.id === Number(courseId))[0]
     );
-  }, [coursesData]);
+  }, [coursesData, location]);
 
   const courseParticulars: courseParticular[] = [
     {
