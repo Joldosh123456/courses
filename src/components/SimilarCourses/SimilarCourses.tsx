@@ -184,7 +184,7 @@ function SimilarCourses() {
             </button>
           </div>
 
-          <Link to='/list' className="hidden sm:block">View All &nbsp;→</Link>
+          <Link to='/list' className="hidden sm:block">{t("SimilarCourses.link")} &nbsp;→</Link>
         </div>
 
         <div
@@ -193,7 +193,7 @@ function SimilarCourses() {
           {renderCoursesCards}
         </div>
 
-        <Link to='/list' className="sm:hidden">View All &nbsp;→</Link>
+        <Link to='/list' className="sm:hidden">{t("SimilarCourses.link")} &nbsp;→</Link>
       </div>
     </article>
   );

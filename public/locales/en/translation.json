@@ -218,6 +218,7 @@
     }
   },
   "SimilarCourses": {
-    "title": "Similar Courses"
+    "title": "Similar Courses",
+    "link": "View All"
   }
 }
