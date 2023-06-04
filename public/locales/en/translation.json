@@ -187,5 +187,34 @@
       "illustrator": "illustrator",
       "animator": "animator"
     }
+  },
+  "CourseDetailsReviews": {
+    "title": "Reviews",
+    "select": {
+      "newest": "Newest",
+      "top-rated": "Top rated"
+    },
+    "review": {
+      "like": "Helpful",
+      "reply": "Reply"
+    },
+    "aside": {
+      "reviews": "Reviews",
+      "button": "Write a Review"
+    },
+    "months": {
+      "Jan": "Jan",
+      "Feb": "Feb",
+      "Mar": "Mar",
+      "Apr": "Apr",
+      "May": "May",
+      "Jun": "Jun",
+      "Jul": "Jul",
+      "Aug": "Aug",
+      "Sep": "Sep",
+      "Oct": "Oct",
+      "Nov": "Nov",
+      "Dec": "Dec"
+    }
   }
 }

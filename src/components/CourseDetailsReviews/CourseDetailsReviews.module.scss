@@ -115,3 +115,80 @@
 
   }
 }
+
+
+
+
+
+
+
+
+
+
+.CourseDetailsReviews-dark{
+  p{
+    color: white!important;
+  }
+
+
+  .CourseDetailsReviews__review-buttons{
+    img{
+      filter: contrast(0) brightness(200%);
+    }
+  }
+
+  .CourseDetailsReviews__aside{
+
+    .CourseDetailsReviews__aside-statistic{
+      span{
+        img{
+          filter: contrast(0) brightness(200%);
+        }
+      }
+  
+      p{
+        color: var(--p-color)!important;
+      }
+    }
+
+    button{
+      p{
+        color: rgba(250, 84, 28, 1)!important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .CourseDetailsReviews{
+    padding: 64px 0;
+  
+    .CourseDetailsReviews__content{
+      width: 100%;
+
+      header{
+        > div{
+          > div{
+            height: 48px;
+            min-height: 0px;
+          }
+        }
+      }
+    }
+
+    .CourseDetailsReviews__aside{
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-export const sorting = ['newest', 'relevance']
+export const sorting = ['newest', 'top-rated']
 
 
 
