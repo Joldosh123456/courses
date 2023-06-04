@@ -31,9 +31,9 @@ function CourseDetailsLessons() {
   const {t} = useTranslation()
 
   useEffect(() => {
-    // window.scrollTo({
-    //   // top: 0,
-    // });
+    window.scrollTo({
+      top: 0,
+    });
   }, []);
 
   useEffect(() => {
