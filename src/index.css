@@ -47,7 +47,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #b8b8b8;
+  background-color: #868686;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-thumb:active {
-  background-color: #7e7e7e;
+  background-color: #808080;
 }
 
 

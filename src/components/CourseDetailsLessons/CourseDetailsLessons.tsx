@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React, { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 
 import css from "./CourseDetailsLessons.module.scss";
@@ -23,6 +23,8 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 
 function CourseDetailsLessons() {
+  const location = useLocation();
+
   const {courseId} = useParams()
   const coursesData = useAppSelector(state => state.courses.coursesData)
   const [currCourse, setCurrCourse] = useState<course>();
@@ -40,7 +42,7 @@ function CourseDetailsLessons() {
     setCurrCourse(
       coursesData.filter((elem: course) => elem.id === Number(courseId))[0]
     );
-  }, [coursesData]);
+  }, [coursesData, location]);
 
 
   const renderLessons = useMemo(

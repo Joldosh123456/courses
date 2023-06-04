@@ -216,5 +216,9 @@
       "Nov": "Nov",
       "Dec": "Dec"
     }
+  },
+  "SimilarCourses": {
+    "title": "Similar Courses",
+    "link": "View All"
   }
 }
