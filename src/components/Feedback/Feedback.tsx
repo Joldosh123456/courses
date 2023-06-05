@@ -78,7 +78,7 @@ function Feedback() {
         >
           {
             elem.students.map((elem2, index2) => (
-              <ToggleButton value={index2+1} className={`${css['Feedback__user']} flex flex-col gap-4`}>
+              <ToggleButton key={Date.now()+index2} value={index2+1} className={`${css['Feedback__user']} flex flex-col gap-4`}>
                 <Avatar src={elem2.img} alt={elem2.name} className='pointer-events-none' sx={{width: 48, height: 48}} />
 
                 <span className={`flex flex-col`}>
