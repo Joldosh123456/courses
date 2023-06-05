@@ -36,7 +36,7 @@ function Feedback() {
   const prevBtn = useRef(null)
   const nextBtn = useRef(null)
   
-  const renderSlides = useMemo(() => (
+  const renderSlides = 
     slider.map((elem, index) => (
       <SwiperSlide key={Date.now()+index} className="w-full !flex flex-col items-center">
         <img src={vectorAp} alt="quote" className="w-12 opacity-50" />
@@ -91,7 +91,6 @@ function Feedback() {
         </ToggleButtonGroup>
       </SwiperSlide>
     ))
-  ), [slider, alignment])
 
 
   return (
