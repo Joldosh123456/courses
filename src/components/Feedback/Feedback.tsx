@@ -101,19 +101,21 @@ function Feedback() {
       
       <div className={`${css['Feedback__swiper-wrapper']} w-full relative`}>
         <Swiper
-        breakpoints={{
-          0: {
-            allowTouchMove: true
-          },
-          1024: {
-            allowTouchMove: false
-          }
-        }}
+          breakpoints={{
+            1024: {
+              allowTouchMove: false
+            }
+          }}
           navigation={{
             prevEl: prevBtn.current,
             nextEl: nextBtn.current
           }}
           spaceBetween='200'
+          loop={true}
+          autoplay={{
+              delay: 500,
+              disableOnInteraction: false
+          }}
           modules={[Navigation]}
           className={`${css['Feedback__swiper']} text-center`}
         >
