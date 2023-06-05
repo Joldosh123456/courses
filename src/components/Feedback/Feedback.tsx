@@ -1,88 +1,131 @@
-import scss from "./Feedback.module.scss";
+import css from "./Feedback.module.scss";
 import { useTranslation } from "react-i18next";
-// import { slider } from "../../../constants/Feedback";
 import vectorAp from "../../assets/Feedback/Vector.svg";
 import avatar from "../../assets/Feedback/Avatar1.svg";
 import avatar2 from "../../assets/Feedback/Avatar2.svg";
 import avatar3 from "../../assets/Feedback/img3Active.svg";
 import avatar4 from "../../assets/Feedback/Avatar3.svg";
 import avatar5 from "../../assets/Feedback/Avatar4.svg";
-import prev from "../../assets/Feedback/leftVector.svg";
-import next from "../../assets/Feedback/rightVector.svg";
+import ic_left_arrow from "../../assets/Feedback/ic_left_arrow.svg";
 import { Button } from "@mui/material";
-import { useRef } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
+import { useRef, useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { slider } from "../../constants/Feedback";
+import { Navigation } from "swiper";
+import Avatar from '@mui/material/Avatar';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import {useState} from 'react';
+import { useAppSelector } from '../../hooks/hooks';
 
 function Feedback() {
-  const arrowRef = useRef<Slider>(null);
+  const darkScheme = useAppSelector(state => state.general.darkScheme)
   const { t } = useTranslation();
-  // const arrowRef = useRef<HTMLButtonElement>(null);
-  // useEffect(() => {
-  //   arrowRef.current!.focus();
-  // }, []);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
+
+
+  const [alignment, setAlignment] = useState(3);
+
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: number,
+  ) => {
+    setAlignment(newAlignment);
   };
+
+
+  const prevBtn = useRef(null)
+  const nextBtn = useRef(null)
+  
+  const renderSlides = useMemo(() => (
+    slider.map((elem, index) => (
+      <SwiperSlide key={Date.now()+index} className="w-full !flex flex-col items-center">
+        <img src={vectorAp} alt="quote" className="w-12 opacity-50" />
+        <p className="pt-6 pb-10">{elem.description}</p>
+
+        <ToggleButtonGroup
+          value={alignment}
+          exclusive
+          onChange={handleChange}
+          sx={{
+            gap: '20px',
+            '& > button': {
+              border: 'none',
+              padding: '0px',
+              opacity: 0.5,
+              paddingBottom: '20px',
+              '&:hover': {
+                backgroundColor: 'transparent'
+              },
+              '&:active *': {
+                backgroundColor: 'transparent'
+              },
+              '& > span': {
+                opacity: 0
+              }
+            },
+            '& .Mui-selected': {
+              backgroundColor: 'transparent!important',
+              opacity: 1,
+              '& > div': {
+                width: 96,
+                height: 96,
+              },
+              '& > span': {
+                opacity: 1
+              }
+            }
+          }}
+        >
+          {
+            elem.students.map((elem2, index2) => (
+              <ToggleButton key={Date.now()+index2} value={index2+1} className={`${css['Feedback__user']} flex flex-col gap-4`}>
+                <Avatar src={elem2.img} alt={elem2.name} className='pointer-events-none' sx={{width: 48, height: 48}} />
+
+                <span className={`flex flex-col`}>
+                  <h3 className="!capitalize">{elem2.name}</h3>
+                  <p>{t(elem.profession)}</p>
+                </span>
+              </ToggleButton>
+            ))
+          }
+        </ToggleButtonGroup>
+      </SwiperSlide>
+    ))
+  ), [slider, alignment])
+
+
   return (
-    // <div className="container flex flex-col justify-between items-center gap-16 lg:flex-row lg:gap-0">
-    //   <div className={scss.feedback}>
-    //     <Slider ref={arrowRef} {...settings}>
-    //       <div>
-    //         <h1>{t("feedback.title")}</h1>
-    //         <img className={scss.vectorAp} src={vectorAp} alt="vectorAp" />
-    //         <p>{t("feedback.description")}</p>
-    //         <div className={scss.avatars}>
-    //           <img src={avatar} alt="avatar" />
-    //           <img src={avatar2} alt="avatar" />
-    //           <img src={avatar3} alt="avatar" />
-    //           <img src={avatar4} alt="avatar" />
-    //           <img src={avatar5} alt="avatar" />
-    //         </div>
-    //         <h3>{t("feedback.students")}</h3>
-    //         <p className={scss.profession}>{t("feedback.profession")}</p>
-    //       </div>
-    //       <div>
-    //         <h1>{t("feedback.title")}</h1>
-    //         <img className={scss.vectorAp} src={vectorAp} alt="vectorAp" />
-    //         <p>{t("feedback.description")}</p>
-    //         <div className={scss.avatars}>
-    //           <img src={avatar} alt="avatar" />
-    //           <img src={avatar2} alt="avatar" />
-    //           <img src={avatar3} alt="avatar" />
-    //           <img src={avatar4} alt="avatar" />
-    //           <img src={avatar5} alt="avatar" />
-    //         </div>
-    //         <h3>{t("feedback.students")}</h3>
-    //         <p className={scss.profession}>{t("feedback.profession")}</p>
-    //       </div>
-    //     </Slider>
-    //     <div className=" flex mt-8 gap-8">
-    //             <button onClick={() => arrowRef.current.slickPrev()}><img src={prev} alt='Prev'/></button>
-    //             <button onClick={() => arrowRef.current.slickNext()}><img src={next} alt='Prev'/></button>
-    //         </div>
-    //   </div>
-    // </div>
-    <div className="container flex flex-col justify-between items-center gap-16 lg:flex-row lg:gap-0">
-    <div className={scss.feedback}>
-      <Slider ref={arrowRef} {...settings}>
-        <div>
-        
-        </div>
-        
-      </Slider>
-      <div className="flex mt-8 gap-8">
-        <button onClick={() => arrowRef.current?.slickPrev()}><img src={prev} alt='Prev'/></button>
-        <button onClick={() => arrowRef.current?.slickNext()}><img src={next} alt='Next'/></button>
+  <article className={`${css['Feedback']} ${darkScheme ? css['Feedback-dark'] : ''}`}>
+    <div className={`${css['Feedback__container']} container flex flex-col justify-center items-center gap-16`}>
+      <h1 className="text-center">{t('feedback.title')}</h1>
+      
+      <div className={`${css['Feedback__swiper-wrapper']} w-full relative`}>
+        <Swiper
+        breakpoints={{
+          0: {
+            allowTouchMove: true
+          },
+          1024: {
+            allowTouchMove: false
+          }
+        }}
+          navigation={{
+            prevEl: prevBtn.current,
+            nextEl: nextBtn.current
+          }}
+          spaceBetween='200'
+          modules={[Navigation]}
+          className={`${css['Feedback__swiper']} text-center`}
+        >
+          {renderSlides}
+        </Swiper>
+
+        <button ref={prevBtn} className="absolute left-0 hidden lg:block"><img src={ic_left_arrow} alt='Prev'/></button>
+        <button ref={nextBtn} className="absolute right-0 hidden lg:block"><img className="rotate-180" src={ic_left_arrow} alt='Next'/></button>
       </div>
+
     </div>
-  </div>
+  </article>
   );
 }
 export default Feedback;

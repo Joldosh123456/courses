@@ -6,6 +6,7 @@ import Forget from "../components/Forget/Forget";
 import DownloadApp from "../components/DownloadApp/DownloadApp";
 import FeaturedCourses from "../components/FeaturedCourses/FeaturedCourses";
 import Teachers from "../components/Teachers/Teachers";
+import Feedback from "../components/Feedback/Feedback";
 
 
 function HomePage() {
@@ -16,8 +17,8 @@ function HomePage() {
       <Why />
       <FeaturedCourses/>
       <Category />
-      <Forget />
       <Teachers/>
+      <Feedback />
       <DownloadApp/>
       <Forget/>
     </main>
