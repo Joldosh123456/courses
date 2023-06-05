@@ -106,23 +106,18 @@ function Feedback() {
             }
           }}
           navigation={{
-            prevEl: prevBtn.current,
-            nextEl: nextBtn.current
+            prevEl: '.Feedback__prevBtn',
+            nextEl: '.Feedback__nextBtn'
           }}
           spaceBetween='200'
-          loop={true}
-          autoplay={{
-              delay: 500,
-              disableOnInteraction: false
-          }}
           modules={[Navigation]}
           className={`${css['Feedback__swiper']} text-center`}
         >
           {renderSlides}
         </Swiper>
 
-        <button ref={prevBtn} className="absolute left-0 hidden lg:block"><img src={ic_left_arrow} alt='Prev'/></button>
-        <button ref={nextBtn} className="absolute right-0 hidden lg:block"><img className="rotate-180" src={ic_left_arrow} alt='Next'/></button>
+        <button ref={prevBtn} className="Feedback__prevBtn absolute left-0 hidden lg:block"><img src={ic_left_arrow} alt='Prev'/></button>
+        <button ref={nextBtn} className="Feedback__nextBtn absolute right-0 hidden lg:block"><img className="rotate-180" src={ic_left_arrow} alt='Next'/></button>
       </div>
 
     </div>
