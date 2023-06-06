@@ -11,6 +11,8 @@ import recent3 from '../../assets/BlogPost/Image Ratio-3.svg'
 import recent4 from '../../assets/BlogPost/Image Ratio.svg'
 import ic_search from "../../assets/List/ic_search.svg";
 
+const Belek = (1);
+
 interface RecentsPostsDataProps {
   img: any;
   title: string,
