@@ -232,5 +232,17 @@
   "SimilarCourses": {
     "title": "Похожие курсы",
     "link": "Посмотреть все"
+  },
+  "AboutTeachers": {
+    "title": "Наши учителя",
+    "cards": {
+      "founder-and-ceo": "Основатель и генеральный директор",
+      "analyst-and-marketing-specialist": "Аналитик и специалист по маркетингу",
+      "pm-curator-of-management-course": "Проектный менеджер, куратор курса менеджмента",
+      "curator-of-hr-&-Recruiting-course": "Куратор курса по управлению персоналом и рекрутингу",
+      "founder-and-program-director": "Основатель и программный директор",
+      "marketer-curator-of-marketing-course": "Маркетолог, куратор курса маркетинга",
+      "ux-designer-curator-of-design-course": "UX-дизайнер, куратор курса дизайна"
+    }
   }
 }
