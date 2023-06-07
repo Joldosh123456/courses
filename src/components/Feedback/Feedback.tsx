@@ -1,11 +1,6 @@
 import css from "./Feedback.module.scss";
 import { useTranslation } from "react-i18next";
 import vectorAp from "../../assets/Feedback/Vector.svg";
-import avatar from "../../assets/Feedback/Avatar1.svg";
-import avatar2 from "../../assets/Feedback/Avatar2.svg";
-import avatar3 from "../../assets/Feedback/img3Active.svg";
-import avatar4 from "../../assets/Feedback/Avatar3.svg";
-import avatar5 from "../../assets/Feedback/Avatar4.svg";
 import ic_left_arrow from "../../assets/Feedback/ic_left_arrow.svg";
 import { Button } from "@mui/material";
 import { useRef, useMemo } from "react";

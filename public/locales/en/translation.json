@@ -152,7 +152,17 @@
     "hours": "hours",
     "teachers": "teachers"
   },
-  "CourseDetailsLessons": {
+  "about": {
+    "title": "Online Courses",
+    "desc": "Nunc nulla. Ut leo. Pellentesque commodo eros a enim. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.",
+    "btnText": "Browse Courses"
+  },
+  "forms": {
+    "text": "Nullam accumsan lorem in dui.",
+    "title": "Effective Forms Advertising Internet Web Site",
+    "desc": "Over 92% of computers are infected with Adware and spyware. Such software is rarely accompanied by uninstall utility and even when it is it almost always leaves broken Windows"
+  },
+    "CourseDetailsLessons": {
     "lessons": "Lessons",
     "lesson": "Lesson",
     "learn": "What You Will Learn",

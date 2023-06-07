@@ -152,6 +152,16 @@
     "hours": "часов",
     "teachers": "учителей"
   },
+  "about": {
+    "title": "Онлайн-курсы",
+    "desc": "Нунк нулла. Ут лео. Pellentesque commodo eros a enim. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.",
+    "btnText": "Просмотр курсов"
+  },
+  "forms": {
+    "text": "В мире нет слоя паутины.",
+    "title": "Эффективные формы рекламы в Интернете на веб-сайте",
+    "desc": "Более 92% компьютеров заражены рекламным и шпионским ПО. Такое программное обеспечение редко сопровождается утилитой удаления, и даже если оно есть, оно почти всегда оставляет неработающую Windows."
+  },
   "CourseDetailsLessons": {
     "lessons": "Уроки",
     "lesson": "Урок",

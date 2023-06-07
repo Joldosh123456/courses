@@ -1,8 +1,13 @@
+import About from "../components/About/About";
+import Forms from "../components/Forms/Forms";
 
 function AboutPage() {
   return (
-    <div>AboutPage</div>
-  )
+    <div>
+      <About />
+      <Forms />
+    </div>
+  );
 }
 
-export default AboutPage
+export default AboutPage;

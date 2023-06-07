@@ -1,0 +1,90 @@
+.forms {
+  padding: 120px 0;
+  display: flex;
+  justify-content: space-between;
+  .rightForms {
+    p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #fa541c;
+      padding: 10px 0px;
+      margin-bottom: 16px;
+    }
+  }
+  .leftForms {
+    h1 {
+      width: 544px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 54px;
+      margin-bottom: 24px;
+    }
+    p {
+      width: 544px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}
+@media screen and (max-width: 860px) {
+  .forms {
+    .leftForms {
+      h1 {
+        width: 400px;
+        font-size: 28px;
+        line-height: 38px;
+      }
+      p {
+        width: 400px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 690px) {
+  .forms {
+    .leftForms {
+      h1 {
+        width: 350px;
+        font-size: 24px;
+      }
+      p {
+        width: 340px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 630px) {
+  .forms {
+    .leftForms {
+      h1 {
+        width: 300px;
+        font-size: 21px;
+      }
+      p {
+        width: 300px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .forms {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    .leftForms {
+      h1 {
+        width: 100%;
+        font-size: 28px;
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
