@@ -1,7 +1,8 @@
+
 interface navLink {
   to: string,
   text: string,
-  onClick?: boolean
+  onClick?: boolean,
 }
 
 export const navLinks: navLink[] = [
@@ -11,7 +12,7 @@ export const navLinks: navLink[] = [
   },
   {
     to: '#',
-    text: "header.components"
+    text: "header.components",
   },
   {
     to: '#',

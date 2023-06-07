@@ -146,6 +146,8 @@
     "lessons": "Lessons",
     "quizzes": "Quizzes",
     "Beginner": "Beginner",
+    "Intermediate": "Intermediate",
+    "Advanced": "Advanced",
     "english": "English",
     "hours": "hours",
     "teachers": "teachers"
@@ -159,5 +161,76 @@
     "text": "Nullam accumsan lorem in dui.",
     "title": "Effective Forms Advertising Internet Web Site",
     "desc": "Over 92% of computers are infected with Adware and spyware. Such software is rarely accompanied by uninstall utility and even when it is it almost always leaves broken Windows"
+  },
+    "CourseDetailsLessons": {
+    "lessons": "Lessons",
+    "lesson": "Lesson",
+    "learn": "What You Will Learn",
+    "skills": "Skills You Will Gain",
+    "overview": "Overview",
+    "share": "Share",
+    "instructors": "Instructors",
+    "photography": "Photography",
+    "design": "Design",
+    "art": "Art",
+    "history": "History",
+    "museums": "Museums",
+    "creativity": "Creativity",
+    "art history": "Art History",
+    "aside": {
+      "lessons": "lessons",
+      "includes": "This course includes",
+      "downloadable": "downloadable resourses",
+      "access": "Full lifetime access",
+      "devices": "Access on desktops, tablets, mobile",
+      "certificate": "Certificate of completion",
+      "button": "Enrol Now"
+    },
+    "advertisement": {
+      "title": "Advertisement",
+      "description": "Duis leo. Donec orci lectus, aliquam ut, faucibus non",
+      "button": "Go Now"
+    },
+    "instructorObj": {
+      "ratings": "ratings",
+      "students": "students",
+      "courses": "courses",
+      "designer": "desgner",
+      "illustrator": "illustrator",
+      "animator": "animator"
+    }
+  },
+  "CourseDetailsReviews": {
+    "title": "Reviews",
+    "select": {
+      "newest": "Newest",
+      "top-rated": "Top rated"
+    },
+    "review": {
+      "like": "Helpful",
+      "reply": "Reply"
+    },
+    "aside": {
+      "reviews": "Reviews",
+      "button": "Write a Review"
+    },
+    "months": {
+      "Jan": "Jan",
+      "Feb": "Feb",
+      "Mar": "Mar",
+      "Apr": "Apr",
+      "May": "May",
+      "Jun": "Jun",
+      "Jul": "Jul",
+      "Aug": "Aug",
+      "Sep": "Sep",
+      "Oct": "Oct",
+      "Nov": "Nov",
+      "Dec": "Dec"
+    }
+  },
+  "SimilarCourses": {
+    "title": "Similar Courses",
+    "link": "View All"
   }
 }

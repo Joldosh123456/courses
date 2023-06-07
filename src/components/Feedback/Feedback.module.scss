@@ -1,0 +1,157 @@
+.Feedback {
+  padding: 120px 0;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background-color: rgba(249, 250, 251, 1);
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+  }
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: rgba(33, 43, 54, 1);
+  }
+  h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  .avatars {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .profession {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+  }
+  .vectorAp {
+    margin: 0 auto;
+    margin-bottom: 34px;
+  }
+  .vector{
+    background-color:black ;
+    cursor: pointer;
+  }
+
+  .Feedback__container{
+
+    .Feedback__swiper-wrapper{
+      .Feedback__swiper{
+        width: calc(100% - 80px);
+        max-width: 650px;
+
+        .Feedback__user{
+          width: 68px;
+          text-transform: capitalize;
+          white-space: nowrap;
+
+          span{
+            
+            h3{
+              line-height: 100%;
+            }
+  
+            p{
+              font-size: 13px;
+              line-height: 100%;
+              color: var(--p-color);
+            }
+          }
+        }
+      }
+
+      > button{
+        padding: 8px;
+
+        top: calc(50% - 20px);
+
+        border-radius: 100%;
+        transition: 0.1s;
+        
+        &:hover{
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        &:active{
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+        &:disabled{
+          background-color: rgba(0, 0, 0, 0.01);
+
+          img{
+            opacity: 0.5;
+          }
+        }
+
+        img{
+          width: 24px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.Feedback-dark{
+  background-color: rgba(var(--p-color-dark-rgb), 0.12);
+
+  p{
+    color: white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+  .Feedback {
+    padding: 64px 0;
+
+    h1{
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    .Feedback__swiper{
+      width: 100%!important;
+
+      p{
+        font-size: 20px;
+      }
+
+      .Feedback__user{
+
+        &:first-of-type, &:last-of-type{
+          display: none;
+        }
+      }
+    }
+  }
+}

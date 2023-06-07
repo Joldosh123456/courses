@@ -39,6 +39,25 @@ code {
   -webkit-tap-highlight-color: transparent;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #868686;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #989898;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: #808080;
+}
+
 
 
 body{
