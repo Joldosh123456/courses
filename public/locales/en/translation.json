@@ -232,5 +232,21 @@
   "SimilarCourses": {
     "title": "Similar Courses",
     "link": "View All"
+  },
+  "AboutTeachers": {
+    "title": "Our Teachers",
+    "cards": {
+      "founder-and-ceo": "Founder and CEO",
+      "analyst-and-marketing-specialist": "Analyst and Marketing Specialist",
+      "pm-curator-of-management-course": "PM, Curator of Management Course",
+      "curator-of-hr-&-Recruiting-course": "Curator of HR & Recruiting Course",
+      "founder-and-program-director": "Founder and Program Director",
+      "marketer-curator-of-marketing-course": "Marketer, Curator of Marketing Course",
+      "ux-designer-curator-of-design-course": "UX Designer, Curator of Design Course",
+      "ui-designer": "UI Designer",
+      "hr-manager": "Hr Manager",
+      "leader": "Leader",
+      "project-manager": "Project Manager"
+    }
   }
 }

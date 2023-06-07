@@ -1,4 +1,5 @@
 import About from "../components/About/About";
+import AboutTeachers from "../components/AboutTeachers/AboutTeachers";
 import Forms from "../components/Forms/Forms";
 
 function AboutPage() {
@@ -6,6 +7,7 @@ function AboutPage() {
     <div>
       <About />
       <Forms />
+      <AboutTeachers />
     </div>
   );
 }
