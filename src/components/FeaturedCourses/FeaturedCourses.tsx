@@ -15,6 +15,7 @@ import { fetchGetCourses } from "../../redux/slices/coursesSlice";
 import i18n from "../../i18n";
 import { Link } from "react-router-dom";
 
+
 function FeaturedCourses() {
   const darkScheme = useAppSelector((state) => state.general.darkScheme);
   const { t } = useTranslation();
