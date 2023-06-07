@@ -257,5 +257,16 @@
   "LatestPosts": {
     "title": "Latest Posts",
     "read": "8 min read"
+  },
+  "CoreValues": {
+    "title": "Core Values",
+    "description": "Etiam ultricies nisi vel augue. Suspendisse potenti. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Phasellus viverra nulla ut metus varius laoreet.",
+    "card": {
+      "structured-approach": "Structured Approach",
+      "professional-feedbacks": "Professional Feedbacks",
+      "efficiency": "Efficiency",
+      "flexible-schedule": "Flexible Schedule",
+      "description": "Aenean urna dictum adipiscing nec, cras quisque."
+    }
   }
 }
