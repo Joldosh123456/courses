@@ -55,8 +55,6 @@ function Brands() {
             </div>
         </div>
     </article>
-
-    
   )
 }
 

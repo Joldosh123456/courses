@@ -138,6 +138,11 @@
       }
     }
   },
+  "BlogHero": {
+    "Date": "February 28, 2018 · 8 min read",
+    "Maximize": "How to Maximize Your ROI Through Scientific SEM?",
+    "SomeWord": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+  },
   "FeaturedCourses": {
     "title": "Featured Courses",
     "description": "Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet iaculis."
@@ -248,6 +253,10 @@
       "leader": "Leader",
       "project-manager": "Project Manager"
     }
+  },
+  "LatestPosts": {
+    "title": "Latest Posts",
+    "read": "8 min read"
   },
   "CoreValues": {
     "title": "Core Values",

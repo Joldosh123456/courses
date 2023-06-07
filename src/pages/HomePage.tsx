@@ -6,6 +6,7 @@ import DownloadApp from "../components/DownloadApp/DownloadApp";
 import FeaturedCourses from "../components/FeaturedCourses/FeaturedCourses";
 import Teachers from "../components/Teachers/Teachers";
 import Feedback from "../components/Feedback/Feedback";
+import LatestPosts from "../components/LatestPosts/LatestPosts";
 
 
 function HomePage() {
@@ -18,6 +19,7 @@ function HomePage() {
       <Category />
       <Teachers/>
       <Feedback />
+      <LatestPosts />
       <DownloadApp/>
     </main>
   )

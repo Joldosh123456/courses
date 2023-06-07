@@ -4,6 +4,7 @@ import Brands from "../components/Brands/Brands";
 import CoreValues from "../components/CoreValues/CoreValues";
 import Feedback from "../components/Feedback/Feedback";
 import Forms from "../components/Forms/Forms";
+import LatestPosts from "../components/LatestPosts/LatestPosts";
 
 function AboutPage() {
   return (
@@ -14,6 +15,7 @@ function AboutPage() {
       <AboutTeachers />
       <Brands />
       <Feedback />
+      <LatestPosts />
     </main>
   );
 }
