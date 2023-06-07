@@ -27,8 +27,8 @@ function AboutTeachers() {
     allTeacherCards.map((elem, index) => (
       <section key={Date.now() + index} className={`flex flex-col justify-between rounded-2xl overflow-hidden ${css["AboutTeachers__card"]}`}>
         <div className={`${css["AboutTeachers__card-title"]} flex flex-col p-6 gap-2 text-center`}>
-          <h1>{elem.name}</h1>
-          <p>{t("AboutTeachers.cards." + elem.career)}</p>
+          <h1 className='font-semibold'>{elem.name}</h1>
+          <p className='text-xs'>{t("AboutTeachers.cards." + elem.career)}</p>
         </div>
 
         <div className={`${css["AboutTeachers__card-image-wrapper"]} grow relative`}>
