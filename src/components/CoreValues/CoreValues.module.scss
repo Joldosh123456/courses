@@ -1,0 +1,32 @@
+.CoreValues{
+  padding: 120px 0;
+  background-color: rgba(249, 250, 251, 1);
+}
+
+
+
+
+
+
+
+
+
+
+.CoreValues-dark{
+  background-color: rgba(var(--p-color-dark-rgb), 0.12);
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+  .CoreValues{
+    padding: 64px 0;
+  }
+}
