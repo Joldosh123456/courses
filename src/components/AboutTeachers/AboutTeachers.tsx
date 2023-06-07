@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
@@ -13,6 +13,10 @@ function AboutTeachers() {
   const darkScheme = useAppSelector(state => state.general.darkScheme)
 
   const {t} = useTranslation()
+
+  useEffect(() => {
+    window.scrollTo({top: 0})
+  }, [])
 
 
   const renderSocialLinks = useMemo(() => (
@@ -44,7 +48,7 @@ function AboutTeachers() {
   ), [i18n.language])
 
   return (
-    <article className={`${css['AboutTeachers']} ${darkScheme ? css['AboutTeachers-dark'] : ''}`}>
+    <article id='about_teachers' className={`${css['AboutTeachers']} ${darkScheme ? css['AboutTeachers-dark'] : ''}`}>
       <div className={`container flex flex-col gap-16 sm:gap-20`}>
         <div className={`${css['AboutTeachers-title']} text-center sm:text-left`}>
           <h1 className='text-center text-3xl font-bold sm:text-5xl mb-6'>{t('AboutTeachers.title')}</h1>

@@ -1,14 +1,18 @@
 import About from "../components/About/About";
 import AboutTeachers from "../components/AboutTeachers/AboutTeachers";
+import Brands from "../components/Brands/Brands";
+import Feedback from "../components/Feedback/Feedback";
 import Forms from "../components/Forms/Forms";
 
 function AboutPage() {
   return (
-    <div>
+    <main>
       <About />
       <Forms />
       <AboutTeachers />
-    </div>
+      <Brands />
+      <Feedback />
+    </main>
   );
 }
 

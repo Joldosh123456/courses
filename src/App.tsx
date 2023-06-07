@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import { useAppSelector } from "./hooks/hooks";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Footer from "./components/Footer/Footer";
+import Forget from "./components/Forget/Forget";
 
 
 
@@ -106,6 +107,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
 
+        <Forget />
         <Footer />
       </div>
     </ThemeProvider>
