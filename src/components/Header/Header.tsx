@@ -1,8 +1,6 @@
 import React, {
   FormEvent,
-  FormEventHandler,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -11,21 +9,14 @@ import { createTheme, styled } from "@mui/material/styles";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 
 import css from "./Header.module.scss";
 import mainLogoLight from "../../assets/Header/mainLogo-lightMode.svg";
 import mainLogoDark from "../../assets/Header/mainLogo-darkMode.svg";
-import bottomArrowLight from "../../assets/Header/bottomArrow-lightMode.svg";
-import bottomArrowDark from "../../assets/Header/bottomArrow-darkMode.svg";
 import searchIconLight from "../../assets/Header/searchIcon-lightMode.svg";
-import searchIconDark from "../../assets/Header/searchIcon-darkMode.svg";
 import languageIconLight from "../../assets/Header/languageIcon-lightMode.svg";
-import languageIconDark from "../../assets/Header/languageIcon-darkMode.svg";
 import burgerMenuIconLight from "../../assets/Header/burgerMenuIcon-lightMode.svg";
-import burgerMenuIconDark from "../../assets/Header/burgerMenuIcon-darkMode.svg";
 import crossIconLight from "../../assets/Header/crossIcon-lightMode.svg";
-import crossIconDark from "../../assets/Header/crossIcon-darkMode.svg";
 import { changeLang, changeScheme } from "../../redux";
 import {
   useAppDispatch,
@@ -247,7 +238,13 @@ function Header() {
       key={Date.now() + index}
       to={elem.to}
       className={location.pathname === elem.to ? "link-disabled" : ""}
-      onClick={() => setSelectModal(false)}
+      onClick={() => 
+        {
+          setSelectModal(false) 
+          setIsMobileMenuModal(false)
+          setMobileSelect(false)
+        }
+      }
     >
       <Button disabled={location.pathname === elem.to}>{t(elem.text)}</Button>
     </Link>
@@ -282,8 +279,14 @@ function Header() {
       `}
       onClick={
         elem.onClick
-          ? () => toggleModal(isMobileSelect, setMobileSelect)
-          : undefined
+          ? () => {
+            toggleModal(isMobileSelect, setMobileSelect)
+          }
+          : () => {
+            setSelectModal(false) 
+            setIsMobileMenuModal(false)
+            setMobileSelect(false)
+          }
       }
     >
       <Button>{t(elem.text)}</Button>
