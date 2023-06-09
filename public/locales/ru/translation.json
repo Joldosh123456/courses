@@ -239,6 +239,25 @@
     "title": "Похожие курсы",
     "link": "Посмотреть все"
   },
+  "learners": {
+    "title": "Учащиеся",
+    "subtitle": "14k+",
+    "desc": "Ut varius tincidunt libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
+    "title2": "Курсы",
+    "subtitle2": "1.05k+",
+    "desc2": "Ut varius tincidunt libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
+    "title3": "Выпускники",
+    "subtitle3": "52k+",
+    "desc3": "Ut varius tincidunt libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
+  },
+  "coreValues":{
+    "title":"Главные ценности",
+    "desc":"Etiam ultricies nisi vel augue. Suspendisse potenti. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Phasellus viverra nulla ut metus varius laoreet.",
+    "subtitle":"Структурированный подход",
+    "subtext":"Aenean urna dictum adipiscing nec, cras quisque.",
+    "subtitle2":"Профессиональные отзывы",
+    "subtitle3": "Эффективность",
+    "subtitle4":"Гибкий график"
   "AboutTeachers": {
     "title": "Наши учителя",
     "cards": {
