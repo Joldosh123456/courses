@@ -29,56 +29,61 @@ function LatestPosts() {
 
   const [postArray, setPostsArray] = useState(PostData);
 
-
-
   const renderPostsCards = useMemo(
-    () => (
-      postArray.map((elem, index) => index < 3 ? (
-          <section
-          key={Date.now() + index}
-          className={`${css["LatestPosts__card"]} flex xl:flex-col gap-4 sm:gap-0 border-none sm:border-solid border rounded-2xl overflow-hidden`}
-        >
-          <div className={`${css["LatestPosts__card-top"]}`}>
-            <img
-              className={`${css["LatestPosts__card-image"]} rounded-xl sm:rounded-none`}
-              src={elem.image}
-              alt={""}
-            />
-          </div>
-          <div className={`${css["LatestPosts__card-bottom"]} flex gap-5 p-0 sm:p-6`}>
-            <div
-              className={`${css["LatestPosts__card-bottom-left"]} hidden sm:flex flex-col items-center gap-1`}
+    () =>
+      postArray.map((elem, index) =>
+        index < 3 ? (
+          <Link to={"/blog/" + elem.id} className="w-fit">
+            <section
+              key={Date.now() + index}
+              className={`${css["LatestPosts__card"]} flex xl:flex-col gap-4 sm:gap-0 border-none sm:border-solid border rounded-2xl overflow-hidden`}
             >
-              <h3>{t('CourseDetailsReviews.months.'+elem.date.month)}</h3>
-              <hr />
-              <h2>{elem.date.day}</h2>
-            </div>
-            <div
-              className={`${css["LatestPosts__card-bottom_title"]} flex flex-col`}
-            >
-              <h1>{elem.title}</h1>
-              <p className="hidden sm:block">{elem.description}</p>
-              <div
-                className={`${css["LatestPosts__card-bottom_avatar"]} flex items-center gap-3 mt-0 sm:mt-5`}
-              >
+              <div className={`${css["LatestPosts__card-top"]}`}>
                 <img
-                  className={`${css["LatestPosts__card-Avatar_image"]} hidden sm:block rounded-3xl`}
-                  width={40}
-                  src={elem.user.img}
+                  className={`${css["LatestPosts__card-image"]} rounded-xl sm:rounded-none`}
+                  src={elem.image}
                   alt={""}
                 />
+              </div>
+              <div
+                className={`${css["LatestPosts__card-bottom"]} flex gap-5 p-0 sm:p-6`}
+              >
                 <div
-                  className={`${css["LatestPosts__card-Avatar-desk"]} flex flex-col`}
+                  className={`${css["LatestPosts__card-bottom-left"]} hidden sm:flex flex-col items-center gap-1`}
                 >
-                  <h4 className="hidden sm:block">{elem.user.name}</h4>
-                  <span>{t('LatestPosts.read')}</span>
+                  <h3>{t("CourseDetailsReviews.months." + elem.date.month)}</h3>
+                  <hr />
+                  <h2>{elem.date.day}</h2>
+                </div>
+                <div
+                  className={`${css["LatestPosts__card-bottom_title"]} flex flex-col`}
+                >
+                  <h1>{elem.title}</h1>
+                  <p className="hidden sm:block">{elem.description}</p>
+                  <div
+                    className={`${css["LatestPosts__card-bottom_avatar"]} flex items-center gap-3 mt-0 sm:mt-5`}
+                  >
+                    <img
+                      className={`${css["LatestPosts__card-Avatar_image"]} hidden sm:block rounded-3xl`}
+                      width={40}
+                      src={elem.user.img}
+                      alt={""}
+                    />
+                    <div
+                      className={`${css["LatestPosts__card-Avatar-desk"]} flex flex-col`}
+                    >
+                      <h4 className="hidden sm:block">{elem.user.name}</h4>
+                      <span>{t("LatestPosts.read")}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      ) : ('')
-      )),
+            </section>
+          </Link>
+        ) : (
+          ""
+        )
+      ),
     [postArray, i18n.language, location]
   );
 
@@ -100,7 +105,9 @@ function LatestPosts() {
             </h1>
           </div>
 
-          <Link to='/blog' className="hidden sm:block">{t("SimilarCourses.link")} &nbsp;→</Link>
+          <Link to="/blog" className="hidden sm:block">
+            {t("SimilarCourses.link")} &nbsp;→
+          </Link>
         </div>
 
         <div
@@ -109,7 +116,9 @@ function LatestPosts() {
           {renderPostsCards}
         </div>
 
-        <Link to='/blog' className="sm:hidden">{t("SimilarCourses.link")} &nbsp;→</Link>
+        <Link to="/blog" className="sm:hidden">
+          {t("SimilarCourses.link")} &nbsp;→
+        </Link>
       </div>
     </article>
   );

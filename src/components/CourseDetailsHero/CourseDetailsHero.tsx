@@ -30,7 +30,7 @@ function CourseDetailsHero() {
   const dispatch = useAppDispatch();
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 0
     });
     dispatch(fetchGetCourses());
   }, []);
