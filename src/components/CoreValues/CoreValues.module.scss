@@ -1,0 +1,145 @@
+.coreValues {
+  background: #f9fafb;
+  padding: 120px 0px;
+  .values {
+    .topValues {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 120px;
+
+      h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+      }
+      p {
+        width: 536px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+    .bottomValues {
+      display: flex;
+      justify-content: space-between;
+      .valuesBox {
+        img {
+          margin-bottom: 40px;
+        }
+        h2 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 30px;
+          margin-bottom: 16px;
+        }
+        p {
+          width: 240px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+.coreValues-dark {
+  background-color: rgba(var(--p-color-dark-rgb), 0.12);
+
+  p {
+    color: white;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .values {
+    .bottomValues {
+      .valuesBox {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1006px) {
+  .coreValues {
+    .values {
+      .topValues {
+        p {
+          width: 430px;
+        }
+      }
+      .bottomValues {
+        .valuesBox {
+          h2 {
+            font-size: 16px;
+          }
+          p {
+            width: 160px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 816px) {
+  .coreValues {
+    .values {
+      .topValues {
+        p {
+          width: 349px;
+          font-size: 14px;
+        }
+      }
+      .bottomValues {
+        .valuesBox {
+          h2 {
+            font-size: 14px;
+          }
+          p {
+            width: 100%;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .coreValues {
+    .values {
+      .topValues {
+        display: block;
+        text-align: center;
+        h1 {
+          margin-bottom: 26px;
+        }
+        p {
+          width: 100%;
+        }
+      }
+      .bottomValues {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        .valuesBox {
+          margin-bottom: 40px;
+          img {
+            margin: 0 auto;
+            margin-bottom: 40px;
+          }
+          h2 {
+            font-size: 20px;
+          }
+          p {
+            width: 100%;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.learn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  .rightLearn {
+    .LearnBox {
+      margin-bottom: 80px;
+      h2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #919eab;
+        margin-bottom: 8px;
+      }
+      h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        margin-bottom: 16px;
+      }
+      p {
+        width: 442px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .learn {
+    .rightLearn {
+      .LearnBox {
+        p {
+          width: 380px;
+        }
+      }
+    }
+    .leftLearn {
+      img {
+        width: 480px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 940px) {
+  .learn {
+    .rightLearn {
+      .LearnBox {
+        margin-bottom: 34px;
+        p {
+          width: 300px;
+        }
+      }
+    }
+    .leftLearn {
+      img {
+        width: 410px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .learn {
+    .rightLearn {
+      .LearnBox {
+        h2 {
+          font-size: 22px;
+        }
+        h1 {
+          font-size: 34px;
+          line-height: 46px;
+        }
+        p {
+          width: 200px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 677px) {
+  .learn {
+    .rightLearn {
+      .LearnBox {
+        h2 {
+          font-size: 20px;
+        }
+        h1 {
+          font-size: 30px;
+          line-height: 44px;
+        }
+        p {
+          width: 180px;
+          font-size: 11px;
+        }
+      }
+    }
+    .leftLearn {
+      img {
+        width: 340px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .learn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    .rightLearn {
+      order: 2;
+      .LearnBox {
+        margin-bottom: 40px;
+        p {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+    }
+    .leftLearn {
+      img {
+        margin: 0 auto;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
