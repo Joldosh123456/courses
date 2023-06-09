@@ -88,7 +88,6 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
-    color: #212B36;
     margin: 40px 0 16px;
   }
   
@@ -108,7 +107,6 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
-    color: #212B36 !important;
   }
 
   .BlogDetails__content > h1{
@@ -133,7 +131,6 @@
     font-size: 20px;
     line-height: 30px;
     text-align: center;
-    color: #212B36 !important;
     margin: 24px 0 48px 0;
   }
   
@@ -331,10 +328,6 @@
     letter-spacing: 0;
   }
   
-  .BlogDetails__content-description2{
-    color: #212B36 !important;
-  }
-  
   
  .quotes{
     padding: 46px;
@@ -344,11 +337,10 @@
     align-items: center;
     gap: 46px;
 
-    p{
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 30px;
-      color: #212B36 !important;
+    h1{
+      font-weight: 600 !important;
+      font-size: 20px !important;
+      line-height: 30px !important;
     }
   }
   
@@ -571,10 +563,7 @@
   
   
   
-  
-  
-  
-  
+
   
   
   

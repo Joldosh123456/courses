@@ -22,6 +22,7 @@ import iconTwitter2 from '../../assets/BlogDetails/Blog/iconbase-1.svg'
 import iconQuotes from '../../assets/BlogDetails/Blog/ic_quotes.svg'
 import shareIcon from '../../assets/BlogDetails/ShareAndLike/iconbase-1.svg'
 import likeIcon  from '../../assets/BlogDetails/ShareAndLike/iconbase.svg'
+import { useTranslation } from "react-i18next";
 
 
 
@@ -66,8 +67,11 @@ function BlogDetails() {
     return;
   };
 
+  const darkScheme = useAppSelector(state => state.general.darkScheme)
+  const {t} = useTranslation()
+
   return (
-    <article className={` container ${css["BlogDetails"]} flex flex-col items-center`}>
+    <article className={` container ${css["BlogDetails"]} ${ darkScheme ? css['BlogDetails-dark'] : ''} flex flex-col items-center`}>
       <div className={`${css["BlogDetails_breadCrumb"]} py-10 w-full`}>
         <Stack>
           <Breadcrumbs
@@ -179,10 +183,10 @@ function BlogDetails() {
 
         <div className={`${css['quotes']}`}>
           <img src={iconQuotes} alt="quotes" />
-          <p>
+          <h1>
             Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum
             aliquam leo.
-          </p>
+          </h1>
         </div>
 
         <img
