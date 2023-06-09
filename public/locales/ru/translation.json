@@ -12,7 +12,6 @@
       "blog": "Блог",
       "about": "О нас",
       "contact": "Связаться"
-
     }
   },
   "Brands": {
@@ -73,15 +72,15 @@
   },
   "main": {
     "title": "Бесплатные",
-    "title2":"Онлайн",
-    "title3":"Курсы",
-    "title4":"От экспертов",
+    "title2": "Онлайн",
+    "title3": "Курсы",
+    "title4": "От экспертов",
     "desc": "Даже sollicitudin, ipsum eu pulvinar rutrum,tellus ipsum laoreet sapien, quis venenatis перед ненавистью есть ameteros. ",
-    "btnText":"Готов начать",
-    "btnText1":"Смотреть видео",
+    "btnText": "Готов начать",
+    "btnText1": "Смотреть видео",
     "divider": "Учащиеся",
     "divider2": "Курсы",
-    "divider3":"Выпускники"
+    "divider3": "Выпускники"
   },
   "feedback": {
     "title": "Что говорят наши студенты",
@@ -89,7 +88,7 @@
     "students": "Роберт Фокс",
     "profession": "Дизайнер"
   },
-  "location":{
+  "location": {
     "title": "Связаться",
     "subtitle": "Электронная почта",
     "subtitle2": "Телефон",
@@ -97,13 +96,13 @@
     "description": "3891 Ранчвью Доктор Ричардсон, Калифорния 62639",
     "text": "ПОДПИСЫВАЙТЕСЬ НА НАС"
   },
-  "contact":{
+  "contact": {
     "title": "Напишите нам",
     "description": "Обычно мы отвечаем в течение 2 рабочих дней",
-    "placeholder":"Имя",
-    "placeholder2":"Электронная почта",
-    "placeholder3":"Предмет",
-    "placeholder4":"Сообщение",
+    "placeholder": "Имя",
+    "placeholder2": "Электронная почта",
+    "placeholder3": "Предмет",
+    "placeholder4": "Сообщение",
     "btnText": "Отправить сообщение"
   },
   "List": {
@@ -250,14 +249,16 @@
     "subtitle3": "52k+",
     "desc3": "Ut varius tincidunt libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem."
   },
-  "coreValues":{
-    "title":"Главные ценности",
-    "desc":"Etiam ultricies nisi vel augue. Suspendisse potenti. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Phasellus viverra nulla ut metus varius laoreet.",
-    "subtitle":"Структурированный подход",
-    "subtext":"Aenean urna dictum adipiscing nec, cras quisque.",
-    "subtitle2":"Профессиональные отзывы",
+  "coreValues": {
+    "title": "Главные ценности",
+    "desc": "Etiam ultricies nisi vel augue. Suspendisse potenti. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Phasellus viverra nulla ut metus varius laoreet.",
+    "subtitle": "Структурированный подход",
+    "subtext": "Aenean urna dictum adipiscing nec, cras quisque.",
+    "subtitle2": "Профессиональные отзывы",
     "subtitle3": "Эффективность",
-    "subtitle4":"Гибкий график"
+    "subtitle4": "Гибкий график"
+  },
+
   "AboutTeachers": {
     "title": "Наши учителя",
     "cards": {

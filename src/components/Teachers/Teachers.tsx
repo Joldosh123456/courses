@@ -1,11 +1,8 @@
 import React, { useMemo } from 'react'
 import { Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import {HashLink} from 'react-router-hash-link'
-
-
+import { HashLink } from 'react-router-hash-link'
 import css from "./Teachers.module.scss"
-
 import { teacherCards } from '../../constants/Teachers'
 import i18n from '../../i18n'
 import { useAppSelector } from '../../hooks/hooks'
@@ -50,4 +47,4 @@ function Teachers() {
   )
 }
 
-export default Teachers
+export default Teachers;
