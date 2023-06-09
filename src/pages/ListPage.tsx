@@ -5,7 +5,6 @@ function ListPage() {
   return (
     <main>
       <List />
-      <Forget />
     </main>
   );
 }

@@ -4,11 +4,10 @@ import Location from "../components/Location/Location";
 
 function ContactPage() {
   return (
-    <>
+    <main>
       <Location />
       <Contact/>
-      <Forget/>
-    </>
+    </main>
   );
 }
 

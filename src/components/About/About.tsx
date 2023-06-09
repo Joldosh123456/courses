@@ -17,7 +17,7 @@ function About() {
             className={scss.btnText}
             variant="contained"
             color="primary"
-            type="submit"
+            size="large"
           >
             {t("about.btnText")}
           </Button>

@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import {HashLink} from 'react-router-hash-link'
 
 
 import css from "./Teachers.module.scss"
@@ -41,7 +42,9 @@ function Teachers() {
           {renderTeacherCards}
         </div>
 
-        <Button variant='outlined' color='secondary' className='w-fit self-center' size='large'>{t('Teachers.button')}</Button>
+        <HashLink to='/about#about_teachers' scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} className='w-fit self-center'>
+          <Button variant='outlined' color='secondary' className='w-fit' size='large'>{t('Teachers.button')}</Button>
+        </HashLink>
       </div>
     </article>
   )

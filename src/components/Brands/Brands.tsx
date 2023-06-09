@@ -34,17 +34,6 @@ const BrandsData: BrandsDataProps[] = [
     }
 ]
 
-// export const BrandsCard = ({img}: BrandsDataProps) => {
-//     <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
-//     {/* <img alt='robots' src={`https://robohash.org/${id}?size=200x200`} /> */}
-//     <div>
-//         <h2>We Work With</h2>
-//         <p>Quisque aliquet, libero consequat elementum convallis.</p>
-//     </div>
-//     <div>{img}</div>
-// </div>
-// }
-
 
 
 
@@ -59,15 +48,13 @@ function Brands() {
             <p>{t('Brands.Desk')}</p>
             <div className={css['Brands__images-container']}>
                 {
-                    BrandsData.map(elem => (
-                        <img src={elem.img} alt={elem.img} />
+                    BrandsData.map((elem, index) => (
+                        <img key={Date.now()+index} src={elem.img} alt={elem.img} />
                     ))
                 }
             </div>
         </div>
     </article>
-
-    
   )
 }
 
