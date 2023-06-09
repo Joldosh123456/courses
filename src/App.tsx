@@ -102,7 +102,7 @@ function App() {
           <Route path="/list" element={<ListPage />} />
           <Route path="/list/:courseId" element={<DetailsPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog-details" element={<BlogDeatailsPage />} />
+          <Route path="/blog/:postId" element={<BlogDeatailsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

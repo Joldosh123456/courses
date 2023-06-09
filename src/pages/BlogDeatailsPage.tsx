@@ -1,7 +1,12 @@
+import BlogDetails from "../components/BlogDetails/BlogDetails"
+import LatestPosts from "../components/LatestPosts/LatestPosts"
 
 function BlogDeatailsPage() {
   return (
-    <main>BlogDeatailsPage</main>
+    <main>
+      <BlogDetails/>
+      <LatestPosts/>
+    </main>
   )
 }
 

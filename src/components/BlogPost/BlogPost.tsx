@@ -10,6 +10,7 @@ import recent2 from "../../assets/BlogPost/Image Ratio-2.svg";
 import recent3 from "../../assets/BlogPost/Image Ratio-3.svg";
 import recent4 from "../../assets/BlogPost/Image Ratio.svg";
 import ic_search from "../../assets/List/ic_search.svg";
+import { Link } from "react-router-dom";
 
 const Belek = 1;
 
@@ -99,8 +100,6 @@ function BlogPost() {
   const PostData = useAppSelector((state) => state.posts.postData);
 
   useEffect(() => {
-    // console.log('effect');
-
     dispatch(fetchGetPosts());
   }, []);
 
@@ -121,14 +120,14 @@ function BlogPost() {
 
     return filtered.map((elem, index) =>
       index >= (page - 1) * pageElems && index < pageElems * page ? (
-        <section
+        <Link to={'/blog/' + elem.id} className="w-fit">
+          <section
           key={Date.now() + index}
           className={`${css["BlogPost__card"]} border-solid border rounded-2xl`}
         >
           <div className={`${css["BlogPost__card-top"]}`}>
             <img
               className={`${css["BlogPost__card-image"]} rounded-2xl`}
-              width={362}
               src={elem.image}
               alt={""}
             />
@@ -165,6 +164,7 @@ function BlogPost() {
             </div>
           </div>
         </section>
+        </Link>
       ) : (
         ""
       )
@@ -209,17 +209,17 @@ function BlogPost() {
     <article
       className={`container ${css["BlogPost"]} ${
         darkScheme ? css["BlogPost-dark"] : ""
-      } flex gap-2 py-32`}
+      } flex justify-between py-32`}
     >
       <div
         className={`${css["BlogPost_fix"]} flex flex-col items-center  gap-16`}
       >
-        <div className={`${css["BlogPost_aside"]} flex flex-wrap gap-12`}>
+        <div className={`${css["BlogPost_aside"]} grid grid-cols-1 sm:grid-cols-2 gap-8`}>
           {renderPostsCards.length ? renderPostsCards : "Empty..."}
         </div>
         <div className={`${css["BlogPost_pagination"]} `}>
           <Pagination
-            count={Math.ceil(postArray.length / pageElems)}
+            count={Math.ceil(renderPostsCards.length / pageElems)}
             className="BlogPage__posts-main-pagination"
             page={page}
             boundaryCount={0}
